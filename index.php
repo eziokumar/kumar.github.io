@@ -18,37 +18,35 @@
             
 
             <header>
-                <?php include 'header.php'; ?>
+                <div w3-include-html="header.html"></div>
             </header> 
 
     <body>
         <div class="content_area">
-            <div class="container">            
-                <?php include 'content.php'; ?>
+            <div class="container">
+                <div w3-include-html="content.html"></div>            
             </div>
         </div>
 
         <div class="content_area">
-            <div class="container">            
-                <?php include 'resume.php'; ?>
+            <div class="container">
+                <div w3-include-html="resume.html"></div>            
             </div>
         </div>
 
         <div class="content_area">
-            <div class="container">            
-                <?php include 'skills.php'; ?>
+            <div class="container">     
+                <div w3-include-html="skills.html"></div>       
             </div>
         </div>
 
 
         <div class="content_area">
-            <div class="container">            
-                <?php include 'just.php'; ?>
+            <div class="container">
+                <div w3-include-html="just.html"></div>            
             </div>
         </div>
 
-        <?php include 'footer.php'; ?>
-
-
+        <div w3-include-html="footer.html"></div>
     </body>
 </html>
