@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------
+# Responsive Media Queries
+--------------------------------------------------------------*/
+
+@media (min-width: 768px) {
+    #contact .contact-address,
+    #contact .contact-phone,
+    #contact .contact-email {
+      padding: 20px 0;
+    }
+  
+    #contact .contact-phone {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    #testimonials .testimonial-item p {
+      width: 80%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    #header #logo {
+      padding-left: 60px;
+    }
+  
+    #nav-menu-container {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 15px;
+    }
+  
+    #nav-menu-container {
+      display: none;
+    }
+  
+    #mobile-nav-toggle {
+      display: inline;
+    }
+
+    /* MUTHU MOBILE */
+
+    .intro-content h1 {
+        font-size: 40px !important;
+    }
+
+    .intro-content h2, h1{
+        font-size: 27px !important;
+    }
+  }
+  
+  
