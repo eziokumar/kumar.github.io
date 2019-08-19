@@ -54,6 +54,10 @@
     .intro-content h2, h1{
         font-size: 27px !important;
     }
+
+    .intro-box{
+      padding-top: 15% !important;
+    }
   }
   
   
