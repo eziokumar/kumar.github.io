@@ -392,6 +392,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 ul.intro-content-list{
   margin-top: 1em;
+  list-style: none;
 }
 
 
