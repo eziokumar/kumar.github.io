@@ -65,6 +65,10 @@
       top: 7px;
     }
 
+    .cd-timeline__content{
+      box-shadow: 2px 2px 0 #dd1a1a !important;
+    }
+
     .cd-timeline__block{
       padding: 0.5em;
     }
