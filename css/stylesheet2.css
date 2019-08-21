@@ -62,13 +62,10 @@
       margin-left: calc(1% - 0px);
       will-change: transform;
       position: relative;
-      right: 35px;
       top: 7px;
     }
 
     .cd-timeline__block{
-      width: 80%;
-      margin: 1em auto;
       padding: 0.5em;
     }
   }
