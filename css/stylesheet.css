@@ -684,7 +684,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #ffffff;
   border-radius: 0.25em;
   padding: 1.25em;
-  box-shadow: 0 3px 0 #dd1a1a;
+  box-shadow: 2px 2px 0 #dd1a1a;
 }
 
 .cd-timeline__content::before {
