@@ -67,6 +67,7 @@
 
     .cd-timeline__content{
       box-shadow: 2px 2px 0 #dd1a1a !important;
+      background-color: #f2f2f2;
     }
 
     .cd-timeline__block{
