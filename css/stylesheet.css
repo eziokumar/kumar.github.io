@@ -604,6 +604,11 @@ ul.intro-content-list{
   font-style: italic;
 }
 
+.intro-content-list span {
+  font-weight: bold;
+  padding-right: 3%;
+}
+
 /* TIMELINE */
 .cd-timeline {
   overflow: hidden;
