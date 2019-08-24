@@ -613,6 +613,15 @@ ul.intro-content-list{
   padding-right: 3%;
 }
 
+.intro-content-list a:hover {
+  font-weight: 700;
+}
+
+.intro-content-list a:hover {
+  font-weight: 700;
+  color: #dd1a1a;
+}
+
 /* TIMELINE */
 .cd-timeline {
   overflow: hidden;
