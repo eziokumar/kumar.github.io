@@ -919,8 +919,8 @@ ul.intro-content-list{
 
 /* SKILLS */
 
-#skills {
-  padding: 60px 0;
+#skills .container {
+  padding: 4% 0;
 }
 
 #skills .progress {
