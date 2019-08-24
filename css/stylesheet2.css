@@ -73,6 +73,11 @@
     .cd-timeline__block{
       padding: 0.5em;
     }
+
+    #skills .container {
+      padding: 0 15px !important;
+    }
+    
   }
   
   
