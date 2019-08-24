@@ -598,10 +598,14 @@ ul.intro-content-list{
   font-weight: 700;
 }
 
+.intro-content-list{
+  margin: 2em;
+}
 
 .intro-content-list p {
   margin: 10px 0;
   font-style: italic;
+  color: #fff;
 }
 
 .intro-content-list span {
