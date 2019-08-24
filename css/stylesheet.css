@@ -588,7 +588,7 @@ ul.intro-content-list{
 }
 
 .intro-content p {
-  margin-top: 10%;
+  margin:10px 0;
   font-family: 'Raleway', sans-serif;
   font-style: italic;
 }
@@ -598,6 +598,11 @@ ul.intro-content-list{
   font-weight: 700;
 }
 
+
+.intro-content-list p {
+  margin: 10px 0;
+  font-style: italic;
+}
 
 /* TIMELINE */
 .cd-timeline {
