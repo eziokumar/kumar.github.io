@@ -383,7 +383,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 # Intro Section
 --------------------------------------------------------------*/
 
-
 #intro {
   display: table;
   width: 100%;
@@ -416,12 +415,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
+  /* -webkit-box-pack: center; */
+  /* -webkit-justify-content: center; */
   -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
+  /* justify-content: center; */
+  /* -webkit-box-align: center; */
+  /* -webkit-align-items: center; */
   -ms-flex-align: center;
   align-items: center;
   position: absolute;
@@ -436,19 +435,20 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #intro .carousel-content {
-  text-align: center;
+
+  padding: 
 }
 
 #intro h2 {
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 48px;
   font-weight: 700;
 }
 
 #intro p {
-  width: 80%;
-  margin: 0 auto 30px auto;
+  /* width: 80%; */
+  /* margin: 0 auto 30px auto; */
   color: #fff;
 }
 
@@ -516,6 +516,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #fff;
   color: #dd1a1a;
 }
+
 
 ul.intro-content-list{
   margin-top: 1em;
@@ -696,16 +697,8 @@ ul.intro-content-list{
 
 /* MUTHU */
 
-.intro-box {
-  padding-top: 6%;
-}
-
-.intro-box img {
-  width: 100%;
-}
 
 .intro-content{
-  margin-top: 20%;
   color: #fff;
 }
 
