@@ -435,8 +435,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #intro .carousel-content {
-  padding-left: 33%;
+  padding: 1em;
+
 }
+
+.carousel-content-list {
+    width: 53%;
+    float: right;
+  }
 
 #intro h2 {
   color: #fff;
