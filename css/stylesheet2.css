@@ -47,6 +47,10 @@
 
   /* MUTHU MOBILE */
 
+  .carousel-content-list {
+    width: 100% !important;
+  }
+
   .intro-content h1 {
       font-size: 40px !important;
   }
@@ -56,7 +60,7 @@
   }
 
   #intro .carousel-content {
-    padding: 10% !important;
+    padding: 2em !important;
   }
 
   .cd-timeline__img{
