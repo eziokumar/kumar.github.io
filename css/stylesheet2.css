@@ -3,81 +3,84 @@
 --------------------------------------------------------------*/
 
 @media (min-width: 768px) {
-    #contact .contact-address,
-    #contact .contact-phone,
-    #contact .contact-email {
-      padding: 20px 0;
-    }
-  
-    #contact .contact-phone {
-      border-left: 1px solid #ddd;
-      border-right: 1px solid #ddd;
-    }
+  #contact .contact-address,
+  #contact .contact-phone,
+  #contact .contact-email {
+    padding: 20px 0;
+  }
+
+  #contact .contact-phone {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+
+@media (min-width: 992px) {
+  #testimonials .testimonial-item p {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #header #logo {
+    padding-left: 60px;
+  }
+
+  #nav-menu-container {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 15px;
+  }
+
+  #nav-menu-container {
+    display: none;
+  }
+
+  #mobile-nav-toggle {
+    display: inline;
+  }
+
+  /* MUTHU MOBILE */
+
+  .intro-content h1 {
+      font-size: 40px !important;
+  }
+
+  .intro-content h2, h1{
+      font-size: 25px !important;
+  }
+
+  #intro .carousel-content {
+    padding: 10% !important;
+  }
+
+  .cd-timeline__img{
+    width: 15px;
+    height: 15px;
+    order: 0;
+    margin-left: calc(1% - 0px);
+    will-change: transform;
+    position: relative;
+    top: 7px;
+  }
+
+  .cd-timeline__content{
+    box-shadow: 2px 2px 0 #dd1a1a !important;
+    background-color: #f2f2f2;
+  }
+
+  .cd-timeline__block{
+    padding: 0.5em;
+  }
+
+  #skills .container {
+    padding: 0 1em !important;
   }
   
-  @media (min-width: 992px) {
-    #testimonials .testimonial-item p {
-      width: 80%;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    #header #logo {
-      padding-left: 60px;
-    }
-  
-    #nav-menu-container {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .back-to-top {
-      bottom: 15px;
-    }
-  
-    #nav-menu-container {
-      display: none;
-    }
-  
-    #mobile-nav-toggle {
-      display: inline;
-    }
+}
 
-    /* MUTHU MOBILE */
-
-    .intro-content h1 {
-        font-size: 40px !important;
-    }
-
-    .intro-content h2, h1{
-        font-size: 27px !important;
-    }
-
-    .cd-timeline__img{
-      width: 15px;
-      height: 15px;
-      order: 0;
-      margin-left: calc(1% - 0px);
-      will-change: transform;
-      position: relative;
-      top: 7px;
-    }
-
-    .cd-timeline__content{
-      box-shadow: 2px 2px 0 #dd1a1a !important;
-      background-color: #f2f2f2;
-    }
-
-    .cd-timeline__block{
-      padding: 0.5em;
-    }
-
-    #skills .container {
-      padding: 0 1em !important;
-    }
-    
-  }
-  
-  
