@@ -1,8 +1,8 @@
 <script type="text/javascript">
-    var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'awesome',
-        clientId: 'c28b40e74dcc4eb7b3d422a11945c421'
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: 'x3ziox',
+        accessToken: '19826354525.1677ed0.b4cc45acdf2942edbbc0c41a2e3c55f9'
     });
-    feed.run();
+    userFeed.run();
 </script>
