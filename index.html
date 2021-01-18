@@ -29,9 +29,25 @@
   <link href="css/stylesheet.css" rel="stylesheet">
   <link href="css/stylesheet2.css" rel="stylesheet">
 
-  <!-- Insta Feed-->
+  <!-- Insta Feed
   <script type="text/javascript" src="path/to/instafeed.min.js"></script>
+-->
+  <!-- INSTAFEED.JS -->
+  <!-- <script src="js/instafeed.min.js"></script> -->
+  <script src="instafeed.min.js"></script>
 
+  <script>
+    var feed = new Instafeed({
+
+      // insert your Instatram accessToken here
+        accessToken: 'IGQVJYeC1DemQzNTd0R194b1FxeFZA2RnhxQkloak4yaENmT0ZA3eXhUQ0Jxa29CWjlQb3l0VGZAvZAWUxNUJmMnhPdDdvY3ltb1FkLTFScHU3ODYyZAUF3SWRNamdjZADV3UTUxNXhGUEtHMzY2R1JaZAk10VwZDZD'
+
+        // More options here
+
+    });
+
+feed.run();
+  </script>
 </head>
 
 <body>
@@ -337,21 +353,6 @@
   <script src="js/timeline.js"></script>
   <script src="js/footer.js"></script>
 
-  <!-- INSTAFEED.JS -->
-  <!-- <script src="js/instafeed.min.js"></script> -->
-  <script src="instafeed.min.js"></script>
 
-  <script>
-    var feed = new Instafeed({
-
-      // insert your Instatram accessToken here
-        accessToken: 'IGQVJYeC1DemQzNTd0R194b1FxeFZA2RnhxQkloak4yaENmT0ZA3eXhUQ0Jxa29CWjlQb3l0VGZAvZAWUxNUJmMnhPdDdvY3ltb1FkLTFScHU3ODYyZAUF3SWRNamdjZADV3UTUxNXhGUEtHMzY2R1JaZAk10VwZDZD'
-
-        // More options here
-
-    });
-
-feed.run();
-  </script>
 </body>
 </html>
