@@ -257,11 +257,13 @@
         <header class="section-header">
           <h3>My BLOGS</h3>
         </header>
+        <!--
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
         <div class="elfsight-app-b269e73e-4014-494a-b91c-0f75c6d2ceed"></div>
-        <!--
+      -->
+        
           <div id="instafeed"></div>
-        -->
+        
         
       </div>
     </section>
@@ -344,6 +346,19 @@
 
   <!-- INSTAFEED.JS -->
   <script src="js/instafeed.min.js"></script>
-  <script src="js/myinstafeed.js"></script>
+  <script src="instafeed.min.js"></script>
+
+  <script>
+    var feed = new Instafeed({
+
+      // insert your Instatram accessToken here
+        accessToken: 'IGQVJYeC1DemQzNTd0R194b1FxeFZA2RnhxQkloak4yaENmT0ZA3eXhUQ0Jxa29CWjlQb3l0VGZAvZAWUxNUJmMnhPdDdvY3ltb1FkLTFScHU3ODYyZAUF3SWRNamdjZADV3UTUxNXhGUEtHMzY2R1JaZAk10VwZDZD'
+
+        // More options here
+
+    });
+
+feed.run();
+  </script>
 </body>
 </html>
