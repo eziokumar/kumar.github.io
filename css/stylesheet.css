@@ -1002,6 +1002,10 @@ ul.intro-content-list{
   background-color: #0098FF;
 }
 
+#gallery .container {
+    padding: 4em 0;
+}
+
 .img-wrapper {
   position: relative;
   margin-top: 15px;
