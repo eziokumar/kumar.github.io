@@ -1082,3 +1082,8 @@ ul.intro-content-list{
     font-size: 3em;
   }
 }
+
+
+#projects .container {
+    padding: 4% 0;
+}
