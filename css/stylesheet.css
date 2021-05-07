@@ -1005,17 +1005,12 @@ ul.intro-content-list{
 
 #gallery {
   padding-top: 40px;
-  @media screen and (min-width: 991px) {
-    padding: 60px 30px 0 30px;
-  }
 }
 
 .img-wrapper {
   position: relative;
   margin-top: 15px;
-  img {
-    width: 100%;
-  }
+
 }
 .img-overlay {
   background: rgba(0,0,0,0.7);
@@ -1028,10 +1023,7 @@ ul.intro-content-list{
   justify-content: center;
   align-items: center;
   opacity: 0;
-  i {
-    color: #fff;
-    font-size: 3em;
-  }
+
 }
 
 #overlay {
@@ -1045,24 +1037,11 @@ ul.intro-content-list{
   justify-content: center;
   align-items: center;
   z-index: 999;
-  // Removes blue highlight
   -webkit-user-select: none;
   -moz-user-select: none;    
   -ms-user-select: none; 
   user-select: none; 
-  img {
-    margin: 0;
-    width: 80%;
-    height: auto;
-    object-fit: contain;
-    padding: 5%;
-    @media screen and (min-width:768px) {
-        width: 60%;
-    }
-    @media screen and (min-width:1200px) {
-        width: 50%;
-    }
-  }
+
 }
 
 #nextButton {
