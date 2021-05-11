@@ -89,6 +89,10 @@
     #footer .footer-container{
           top: 7vh !important;
     }
+
+    .img-wrapper img {
+      width: 100%;
+    }
     
   }
   
