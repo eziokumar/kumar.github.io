@@ -25,6 +25,13 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
+
+  <!-- TEAM PICKER -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/random-teams.css"/>
+
+
   <!-- Main Stylesheet File -->
   <link href="css/stylesheet.css" rel="stylesheet">
   <link href="css/stylesheet2.css" rel="stylesheet">
@@ -340,18 +347,56 @@
 
 
         <div class="teampicker-content">
-            <div class="container-fluid">
-              <div class="row-fluid">
-                </div>
+          <!-- TEAM PICKER -->
+          <div class="row-fluid">
+        <div class="players span4"></div>
+        <div id="generate-teams" class="generate-teams span8"></div>
+      </div>
+    </div>
 
-              <div class="row-fluid">
-                <div class="players span4"></div>
-                <div id="generate-teams" class="generate-teams span8"></div>
-              </div>
 
-            </div>
-          </div>
+    <script type="text/template" id="player-list-template">
+      <input id="add-player" type="text" placeholder="Add a Player...">
+      <ul id="player-list">
+      </ul>
+    </script>
+
+    <script type="text/template" id="team-list-template">
+      <ul id="team-list">
+      </ul>
+    </script>
+
+    <script type="text/template" id="generate-teams-template">
+      <span>Number of teams:</span>
+      <input name="num-teams" id="num-teams" type="number">
+      <button class="btn generate">Generate</button>
+      <div class="teams"></div>
+    </script>
+
+  <script type="text/template" id="team-template">
+      <div class="team">
+        <h3 class="team-name"><%= model.get('name') %></h2>
+        <% _.each(model.get('players'), function(player) { %>
+          <div class="team-player"><%= player.get('name') %></div>
+        <% }); %>
+      </div>
+    </script>
+
+    <script type="text/template" id="player-template">
+    <div class="player">
+      <span><%= model.get('name') %></span>
+      <a class="destroy"></a>
+    </div>
+    </script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+
+    <script type="text/javascript" src="js/teampicker.js"></script>
+          <!-- TEAM PICKER -->
         </div>
+      </div>
     </section>
          
   </main>
@@ -448,50 +493,5 @@
 </script>
 
 
-
-<!-- TEAM PICKER -->
-
-
-    <script type="text/template" id="player-list-template">
-      <input id="add-player" type="text" placeholder="Add a Player...">
-      <ul id="player-list">
-      </ul>
-    </script>
-
-    <script type="text/template" id="team-list-template">
-      <ul id="team-list">
-      </ul>
-    </script>
-
-    <script type="text/template" id="generate-teams-template">
-      <span>Number of teams:</span>
-      <input name="num-teams" id="num-teams" type="number">
-      <button class="btn generate">Generate</button>
-      <div class="teams"></div>
-    </script>
-
-  <script type="text/template" id="team-template">
-      <div class="team">
-        <h3 class="team-name"><%= model.get('name') %></h2>
-        <% _.each(model.get('players'), function(player) { %>
-          <div class="team-player"><%= player.get('name') %></div>
-        <% }); %>
-      </div>
-    </script>
-
-    <script type="text/template" id="player-template">
-    <div class="player">
-      <span><%= model.get('name') %></span>
-      <a class="destroy"></a>
-    </div>
-    </script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js" type="text/javascript"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
-
-    <script type="text/javascript" src="javascripts/random-teams.js"></script>
-
-<!-- TEAM PICKER -->
 </body>
 </html>
