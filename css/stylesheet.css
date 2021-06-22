@@ -1085,13 +1085,13 @@ ul.intro-content-list{
 
 
 .StyledBox-sc-13pk1d4-0.kQfqDG{
-  display: none;
+  display: none !important;
 }
 
 .StyledBox-sc-13pk1d4-0.jrmTrF{
-  display: none;
+  display: none !important;
 }
 
 .StyledBox-sc-13pk1d4-0.iuNkz {
-    display: none;
+    display: none !important;
 }
