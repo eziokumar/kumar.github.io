@@ -1,0 +1,121 @@
+/*--------------------------------------------------------------
+# Responsive Media Queries
+--------------------------------------------------------------*/
+
+@media (min-width: 768px) {
+    #contact .contact-address,
+    #contact .contact-phone,
+    #contact .contact-email {
+      padding: 20px 0;
+    }
+  
+    #contact .contact-phone {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    #testimonials .testimonial-item p {
+      width: 80%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    #header #logo {
+      padding-left: 60px;
+    }
+  
+    #nav-menu-container {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 15px;
+    }
+  
+    #nav-menu-container {
+      display: none;
+    }
+  
+    #mobile-nav-toggle {
+      display: inline;
+    }
+
+    /* MUTHU MOBILE */
+
+    .carousel-content-list {
+      width: 100% !important;
+    }
+
+    .intro-content h1 {
+        font-size: 40px !important;
+    }
+
+    .intro-content h2, h1{
+        font-size: 25px !important;
+    }
+
+    #intro .carousel-content {
+      padding: 2em !important;
+    }
+
+    .cd-timeline__img{
+      width: 15px;
+      height: 15px;
+      order: 0;
+      margin-left: calc(1% - 0px);
+      will-change: transform;
+      position: relative;
+      top: 7px;
+    }
+
+    .cd-timeline__content{
+      box-shadow: 2px 2px 0 #dd1a1a !important;
+      background-color: #f2f2f2;
+    }
+
+    .cd-timeline__block{
+      padding: 0.5em;
+    }
+
+    #skills .container {
+      padding: 0 1em !important;
+    }
+
+    #footer .footer-container{
+          top: 7vh !important;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+    }
+    
+  }
+  
+@media screen and (min-width: 991px) {
+    .img-wrapper img {
+    width: 100%;
+  }
+
+  .img-overlay   i {
+    color: #fff;
+    font-size: 3em;
+  }
+    #overlay img {
+    margin: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5%;
+    @media screen and (min-width:768px) {
+        width: 60%;
+    }
+    @media screen and (min-width:1200px) {
+        width: 50%;
+    }
+  }
+}
