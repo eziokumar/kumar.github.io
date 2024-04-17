@@ -1088,7 +1088,7 @@ button.generate {
 }
 
 
-/* For phones */
+/* MOBILE VIEW */
 @media (max-width: 767px) { 
 
   #generate-teams {
@@ -1101,6 +1101,16 @@ button.generate {
 
   #header {
     font-size: 1.5em;   
+  }
+
+  .ed-timeline{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .ed-container {
+  padding-left: 3em;
+  padding-right: 0px;
   }
 
 }
