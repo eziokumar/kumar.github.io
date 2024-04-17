@@ -1273,13 +1273,13 @@ button.generate {
 @media screen and (max-width: 600px) {
   /* Place the timelime to the left */
   .ed-timeline::after {
-  left: 31px;
+  left: 0px;
   }
   
   /* Full-width ed-containers */
   .ed-container {
     width: 100%;
-    padding-left: 3em;
+    padding-left: 1em;
     padding-right: 0px;
   }
 
@@ -1296,7 +1296,15 @@ button.generate {
   }
 
   .ed-container::after{
-    left: 1em;
+    left: 0px;
+  }
+
+
+  .ed-content span{
+    margin-left: 0px; 
+    padding-left: 0px;
+    border-left: none;
+    padding-top: 5px;
   }
 
   /* Make sure all circles are at the same spot */
