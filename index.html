@@ -35,6 +35,8 @@
   <!-- Main Stylesheet File -->
   <link href="css/stylesheet.css" rel="stylesheet">
   <link href="css/stylesheet2.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -52,6 +54,11 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#footer">Footer</a></li>
+          <li class="menu-has-children"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#teampicker">Team Picker</a></li>
+            </ul>
+          </li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -64,7 +71,7 @@
     <!-- START BANNER -->
     <section id="intro">
       <div class="intro-container">
-        <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+        <div id="bannerCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
   
           <!--
           <ol class="carousel-indicators"></ol>
@@ -79,24 +86,38 @@
                     <div class="intro-content">
                       <h2>HI, I AM</h2>
                       <h1>MUTHUKUMAR</h1>
-                    <!--
+                     <!--
                       <h2 class="typewrite" data-period="2000" data-type='[ "Front - End Programmer.", "Web Developer.", "Web Designer."]'><span class="wrap"></span></h2>
                     -->
                     </div>
                       <div class="intro-content-list">
-                        <p><span>Profile : </span> ASNT NDT Level II</p>
-                        <p><span>Email : </span><a href="mailto:ramukmuthu7@gmail.com">ramukmuthu7@gmail.com</a></p>
-                        <p><span>Address : </span>Chennai, India</p>
+                          <p><span>Profile : </span> ASNT NDT Level II</p>
+                          <p><span>Email : </span><a href="mailto:ramukmuthu7@gmail.com">ramukmuthu7@gmail.com</a></p>
+                          <p><span>Address : </span>Chennai, India</p>
                       </div>
                   </div>
                 </div>
               </div>
             </div>
+  
           </div>
+  
+          <!-- 
+          <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+  
+          <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          -->
         </div>
       </div>
     </section>
-    <!-- START BANNER -->
+    <!-- END BANNER -->
+
 
     <!-- START PROFILE SUMMARY -->
     <section class="container profile_content" id="profilesummary">
@@ -117,7 +138,7 @@
           </header>
 
         <div class="container max-width-lg cd-timeline__container">
-          <div class="cd-timeline__block">
+        	<div class="cd-timeline__block">
               <div class="cd-timeline__img">
               </div> <!-- cd-timeline__img -->
       
@@ -272,7 +293,7 @@
     </section>
     <!-- END WORK EXPERIENCE -->
 
-
+    
     <!-- START EDUCATION -->
     <section id="education" class="container">
       <div class="ed-timeline_content">
@@ -431,7 +452,7 @@
             <h3>SOFT & HARD SKILLS</h3>
           </header>
   
-          <div class="skills-content multi-skills">
+          <div class="skills-content multi-skills col-lg-6 col-md-6 col-xs-12 col-sm-12">
             <div class="progress">
               <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                 <span class="skill">Technical Support<i class="val">100%</i></span>
@@ -463,7 +484,7 @@
             </div>
           </div>
 
-          <div class="skills-content multi-skills">
+          <div class="skills-content multi-skills col-lg-6 col-md-6 col-xs-12 col-sm-12">
             <div class="progress">
               <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                 <span class="skill">Implemented Safety Initiatives<i class="val">100%</i></span>
@@ -549,28 +570,28 @@
         <div class="footer-container container">
           <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <a href="https://github.com/eziokumar" class="icon-social">
+            <a href="https://github.com/eziokumar" class="social-img">
               <img id="n1" src="images/gh.png">
               <img id="n2" src="images/gh1.png">
             </a>
           </div>
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <a href="https://www.facebook.com/eziokumar97" class="icon-social">
+            <a href="https://www.facebook.com/eziokumar97" class="social-img">
               <img id="n1" src="images/g+.png">
               <img id="n2" src="images/g+1.png">
             </a>
           </div>
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <a href="https://www.facebook.com/eziokumar97" class="icon-social">
+            <a href="https://www.facebook.com/eziokumar97" class="social-img">
               <img id="n1" src="images/fb.png">
               <img id="n2" src="images/fb1.png">
             </a>
           </div>
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <a href="https://steamcommunity.com/id/eziokumar/" class="icon-social">
+            <a href="https://steamcommunity.com/id/eziokumar/" class="social-img">
               <img id="n1" src="images/steam.png">
               <img id="n2" src="images/steam1.png">
             </a>
@@ -616,22 +637,6 @@
   <script src="js/footer.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/teampicker.js"></script>
-
-  <!-- INSTA FEED -->
-  <script type="text/javascript" src="js/instafeed.min.js"></script>
-
-  <!-- INSTAFEED.JS -->
- <script src="js/instafeed.min.js"></script>
-
-  <script type="text/javascript">
-    var feed = new Instafeed({
-      accessToken: InstagramToken,
-      limit: 12,
-      template: '<a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a>'
-    });
-    feed.run();
-</script>
-
 
 </body>
 </html>
