@@ -1115,6 +1115,11 @@ button.generate {
   padding-right: 0px;
   }
 
+
+  #footer .footer-top{
+    height: 100vh !important;
+  }
+
 }
 
 /* For phones */
