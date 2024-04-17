@@ -1103,6 +1103,8 @@ button.generate {
     font-size: 1.5em;   
   }
 
+
+
   .ed-timeline{
     margin: 0px;
     padding: 0px;
@@ -1276,9 +1278,13 @@ button.generate {
   
   /* Full-width ed-containers */
   .ed-container {
-  width: 100%;
-  padding-left: 70px;
-  padding-right: 25px;
+    width: 100%;
+    padding-left: 3em;
+    padding-right: 0px;
+  }
+
+  .ed-content{
+    padding: 20px 10px;
   }
   
   /* Make sure that all arrows are pointing leftwards */
@@ -1287,6 +1293,10 @@ button.generate {
   border: medium solid white;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
+  }
+
+  .ed-container::after{
+    left: 1em;
   }
 
   /* Make sure all circles are at the same spot */
