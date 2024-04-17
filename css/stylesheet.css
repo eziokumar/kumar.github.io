@@ -1316,6 +1316,10 @@ button.generate {
   .right {
   left: 0%;
   }
+
+  #skills .progress .skill{
+    font-size: 11px;
+  }
 }
 
 /* EDUCATION */
