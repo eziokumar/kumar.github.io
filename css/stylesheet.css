@@ -983,14 +983,6 @@ span.item-small {
   transition: .9s;
 }
 
-/*multi-skill*/
-.multi-skills {
-    position: relative;
-    float: left;
-    width: 48%;
-    margin: 0 1%;
-}
-
 .unique-color{
   background-color: #3F729B !important;
 }
