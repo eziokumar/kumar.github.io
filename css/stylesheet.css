@@ -1111,6 +1111,10 @@ button.generate {
     font-size: 1.3em;   
   }
 
+  .projects_data img{
+    width: 100% !important;
+  }
+
 }
 
 
