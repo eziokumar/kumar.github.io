@@ -1273,7 +1273,8 @@ button.generate {
 @media screen and (max-width: 600px) {
   /* Place the timelime to the left */
   .ed-timeline::after {
-  left: 0px;
+    left: 0px;
+    margin-left: -7px;
   }
   
   /* Full-width ed-containers */
@@ -1281,6 +1282,10 @@ button.generate {
     width: 100%;
     padding-left: 1em;
     padding-right: 0px;
+  }
+
+  .ed-content h3{
+    font-size: 19px;
   }
 
   .ed-content{
@@ -1293,10 +1298,6 @@ button.generate {
   border: medium solid white;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
-  }
-
-  .ed-container::after{
-    left: 0px;
   }
 
 
