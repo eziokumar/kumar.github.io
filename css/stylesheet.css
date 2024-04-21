@@ -958,8 +958,8 @@ h2.typewrite {
 
 /* SKILLS */
 
-#skills .container {
-  padding: 1% 0;
+section#skills {
+    height: 1450px;
 }
 
 #skills .progress {
