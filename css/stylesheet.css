@@ -600,6 +600,10 @@ span.item-small {
   font-weight: 700;
 }
 
+h2.typewrite {
+    padding-top: 1em;
+}
+
 .intro-content-list{
   margin-top: 2em;
 }
