@@ -454,6 +454,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 700;
 }
 
+#intro > h2 > span{
+  font-weight: 30px;
+}
+
 #intro p {
   /* width: 80%; */
   /* margin: 0 auto 30px auto; */
