@@ -1,0 +1,41 @@
+[
+    {
+        "id": "smart-cart-pos",
+        "title": "Smart Cart POS \u2014 RFID + Raspberry Pi",
+        "description": "An executable POS system built with VB.NET, running on a Raspberry Pi synced to the cloud. Shoppers scan any RFID-tagged product at the cart-mounted reader to see product code, description, unit price, quantity and running totals in real time. A built-in aisle-locator helps users find items, checkout happens via an auto-generated QR code, and the receipt is emailed automatically.",
+        "tagLabel": "Featured Build",
+        "featured": true,
+        "images": [
+            "images/projects/SSCS.png"
+        ]
+    },
+    {
+        "id": "admin-panel",
+        "title": "Admin Panel",
+        "description": "",
+        "tagLabel": "",
+        "featured": false,
+        "images": [
+            "images/projects/ALP1.png",
+            "images/projects/ALP2.png",
+            "images/projects/ALP3.png",
+            "images/projects/ALP4.png",
+            "images/projects/ALP5.png"
+        ]
+    },
+    {
+        "id": "customer-panel",
+        "title": "Customer Panel",
+        "description": "",
+        "tagLabel": "",
+        "featured": false,
+        "images": [
+            "images/projects/CLP1.png",
+            "images/projects/CLP2.png",
+            "images/projects/CLP3.png",
+            "images/projects/CLP4.png",
+            "images/projects/CLP5.png",
+            "images/projects/CPR.png"
+        ]
+    }
+]

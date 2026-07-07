@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Muthukumar Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+<body>
+  <div class="grid-canvas"></div>
+
+  <header id="header">
+    <div class="nav-bar">
+      <a href="index.html" class="brand"><span class="dot"></span> M. KUMAR — LOG</a>
+      <a href="index.html" class="btn btn-ghost" style="padding:8px 16px;">&larr; Back to site</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="container admin-container">
+      <header class="section-header"><span class="idx">+</span><h3>Add Project</h3></header>
+
+      <div class="admin-panel">
+        <label class="admin-label">Admin password
+          <input type="password" id="adminPassword" class="admin-input" autocomplete="current-password" placeholder="Required to add or delete">
+        </label>
+        <p class="admin-hint">Kept only in this browser tab for this session — never saved to disk.</p>
+      </div>
+
+      <form id="projectForm" class="admin-panel" autocomplete="off">
+        <label class="admin-label">Title
+          <input type="text" id="fTitle" class="admin-input" required maxlength="150" placeholder="e.g. Inventory Dashboard">
+        </label>
+
+        <label class="admin-label">Tag label <span class="admin-optional">optional — e.g. "Featured Build"</span>
+          <input type="text" id="fTagLabel" class="admin-input" maxlength="60">
+        </label>
+
+        <label class="admin-label">Description
+          <textarea id="fDescription" class="admin-input admin-textarea" maxlength="4000" rows="5" placeholder="What it does, the stack used, notable details…"></textarea>
+        </label>
+
+        <label class="admin-check">
+          <input type="checkbox" id="fFeatured">
+          Feature this project (large card at the top of the section)
+        </label>
+
+        <label class="admin-label">Images <span class="admin-optional">first one becomes the cover photo</span>
+          <input type="file" id="fImages" class="admin-input" accept="image/png,image/jpeg,image/gif,image/webp" multiple required>
+        </label>
+
+        <div class="admin-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Add Project</button>
+          <span id="formStatus" class="admin-status"></span>
+        </div>
+      </form>
+
+      <header class="section-header" style="margin-top:64px;"><span class="idx">—</span><h3>Manage Projects</h3></header>
+      <div id="manageList" class="admin-manage-list">
+        <p class="projects-status">Loading…</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

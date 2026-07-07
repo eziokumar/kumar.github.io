@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-aesthetics": {
+      "source": "crossbill-highlights/crossbill-web",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/frontend-aesthetics/SKILL.md",
+      "computedHash": "379ab3112dad340c4772f25263fa8397075146d74d2ac1352552e6447c1ac96f"
+    }
+  }
+}
