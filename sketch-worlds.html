@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>World sketches — Muthukumar</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:#000}
+  canvas{position:fixed;inset:0;display:block}
+
+  .hud{position:fixed;inset:0;pointer-events:none;z-index:5}
+
+  .plate{position:absolute;top:44px;left:48px;max-width:430px}
+  .plate .eyebrow{display:block;font-size:11px;letter-spacing:.34em;text-transform:uppercase;margin-bottom:16px;opacity:.75}
+  .plate h1{font-size:52px;line-height:1.02;font-weight:600;margin-bottom:16px;letter-spacing:-.02em}
+  .plate p{font-size:14.5px;line-height:1.62;opacity:.72;max-width:390px}
+
+  .meta{position:absolute;left:48px;bottom:132px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.5}
+
+  .switch{position:fixed;bottom:34px;left:50%;transform:translateX(-50%);
+    display:flex;gap:8px;z-index:10;
+    padding:8px;border-radius:999px;background:rgba(10,10,12,.72);
+    backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.12)}
+  .switch button{cursor:pointer;border:0;border-radius:999px;
+    padding:11px 22px;font:500 12.5px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;
+    background:transparent;color:rgba(255,255,255,.55);transition:.28s}
+  .switch button:hover{color:#fff;background:rgba(255,255,255,.08)}
+  .switch button.on{background:#fff;color:#000}
+
+  .hint{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);z-index:10;
+    font:400 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;
+    text-transform:uppercase;color:rgba(255,255,255,.34)}
+
+  body.a .plate{color:#eaf0f6;font-family:'IBM Plex Sans',sans-serif}
+  body.a .plate .eyebrow,body.a .meta{font-family:'IBM Plex Mono',monospace;color:#ffb03a}
+  body.a .plate h1{font-family:'IBM Plex Sans',sans-serif;font-weight:300}
+  body.a .plate h1 b{font-weight:700;color:#ffb03a}
+
+  body.b .plate{color:#e8ffd0;font-family:'JetBrains Mono',monospace}
+  body.b .plate .eyebrow,body.b .meta{font-family:'JetBrains Mono',monospace;color:#ccff00}
+  body.b .plate h1{font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:-.045em;text-transform:uppercase;font-size:46px}
+  body.b .plate h1 b{color:#ccff00;font-weight:700}
+
+  body.c .plate{color:#241f1a;font-family:'Fraunces',Georgia,serif}
+  body.c .plate .eyebrow,body.c .meta{font-family:'IBM Plex Mono',monospace;color:#b4442a}
+  body.c .plate h1{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:60px}
+  body.c .plate h1 b{font-style:italic;font-weight:400;color:#b4442a}
+  body.c .plate p{color:#3d352c;opacity:.85}
+  body.c .hint{color:rgba(0,0,0,.34)}
+</style>
+</head>
+<body class="a">
+
+<canvas id="c"></canvas>
+
+<div class="hud">
+  <div class="plate">
+    <span class="eyebrow" id="eyebrow"></span>
+    <h1 id="title"></h1>
+    <p id="blurb"></p>
+  </div>
+  <div class="meta" id="meta"></div>
+</div>
+
+<div class="hint">move your cursor · scroll to travel</div>
+
+<div class="switch">
+  <button data-w="a" class="on">A · Inspection</button>
+  <button data-w="b">B · Cyberspace</button>
+  <button data-w="c">C · Gallery</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+
+let W = innerWidth, H = innerHeight;
+renderer.setSize(W,H);
+
+const mouse = {x:0,y:0,tx:0,ty:0};
+let travel = 0, travelTarget = 0;
+
+addEventListener('mousemove', function(e){
+  mouse.tx = (e.clientX/W)*2-1;
+  mouse.ty = (e.clientY/H)*2-1;
+});
+addEventListener('wheel', function(e){ travelTarget += e.deltaY*0.012; }, {passive:true});
+addEventListener('resize', function(){
+  W=innerWidth; H=innerHeight; renderer.setSize(W,H);
+  if(world){ world.camera.aspect=W/H; world.camera.updateProjectionMatrix(); }
+});
+
+/* ============================================================
+   A — INSPECTION WORLD
+   ============================================================ */
+function buildInspection(){
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x080c11);
+  scene.fog = new THREE.Fog(0x080c11, 26, 96);
+
+  const camera = new THREE.PerspectiveCamera(52, W/H, .1, 400);
+
+  scene.add(new THREE.AmbientLight(0x3b4a5c, .55));
+  const key = new THREE.DirectionalLight(0xbcd4ea, .85);
+  key.position.set(-8,14,10); scene.add(key);
+
+  const scanLight = new THREE.PointLight(0xffb03a, 3.2, 34, 2);
+  scene.add(scanLight);
+
+  const group = new THREE.Group(); scene.add(group);
+
+  const pipe = new THREE.Mesh(
+    new THREE.CylinderGeometry(3.1, 3.1, 260, 64, 1, true),
+    new THREE.MeshStandardMaterial({
+      color:0x71808f, roughness:.52, metalness:.92, side:THREE.DoubleSide })
+  );
+  pipe.rotation.z = Math.PI/2;
+  group.add(pipe);
+
+  const seams = [];
+  for(var i=0;i<9;i++){
+    const seam = new THREE.Mesh(
+      new THREE.TorusGeometry(3.16, .17, 12, 90),
+      new THREE.MeshStandardMaterial({color:0x2a3644, roughness:.95, metalness:.35})
+    );
+    seam.rotation.y = Math.PI/2;
+    seam.position.x = -110 + i*26;
+    group.add(seam); seams.push(seam);
+  }
+
+  for(var j=0;j<13;j++){
+    const cradle = new THREE.Mesh(
+      new THREE.BoxGeometry(1.1, 7, 6.6),
+      new THREE.MeshStandardMaterial({color:0x1b232d, roughness:.9, metalness:.5})
+    );
+    cradle.position.set(-120+j*20, -6.4, 0);
+    group.add(cradle);
+  }
+
+  const scan = new THREE.Mesh(
+    new THREE.TorusGeometry(3.9, .045, 8, 120),
+    new THREE.MeshBasicMaterial({color:0xffb03a})
+  );
+  scan.rotation.y = Math.PI/2;
+  group.add(scan);
+
+  const halo = new THREE.Mesh(
+    new THREE.TorusGeometry(4.5, .5, 8, 90),
+    new THREE.MeshBasicMaterial({color:0xffb03a, transparent:true, opacity:.10})
+  );
+  halo.rotation.y = Math.PI/2;
+  group.add(halo);
+
+  const grid = new THREE.GridHelper(300, 90, 0x1d5a6b, 0x121b24);
+  grid.position.y = -11; scene.add(grid);
+
+  const dust = new THREE.BufferGeometry();
+  const dp = [];
+  for(var k=0;k<1100;k++) dp.push((Math.random()-.5)*200,(Math.random()-.5)*46,(Math.random()-.5)*70);
+  dust.setAttribute('position', new THREE.Float32BufferAttribute(dp,3));
+  scene.add(new THREE.Points(dust, new THREE.PointsMaterial({
+    color:0x8fa6bd, size:.13, transparent:true, opacity:.5})));
+
+  return {
+    scene: scene, camera: camera,
+    update: function(t){
+      const x = -96 + travel*7;
+      scan.position.x = x; halo.position.x = x;
+      halo.scale.setScalar(1 + Math.sin(t*2.6)*.06);
+      scanLight.position.set(x, 1.6, 4.4);
+
+      seams.forEach(function(s){
+        const d = Math.abs(s.position.x - x);
+        const hot = Math.max(0, 1 - d/9);
+        s.material.color.setRGB(.165+hot*.835, .212+hot*.478, .267-hot*.06);
+      });
+
+      camera.position.set(x - 15.5, 2.4 - mouse.y*2.4, 12.6 - mouse.y*1.1);
+      camera.lookAt(x + 6, mouse.y*1.6, mouse.x*2.6);
+    }
+  };
+}
+
+/* ============================================================
+   B — WIREFRAME CYBERSPACE
+   ============================================================ */
+function buildCyber(){
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x04060a);
+  scene.fog = new THREE.FogExp2(0x04060a, .022);
+
+  const camera = new THREE.PerspectiveCamera(64, W/H, .1, 400);
+
+  const g = new THREE.GridHelper(400, 110, 0xccff00, 0x143018);
+  g.position.y = -9; g.material.opacity=.34; g.material.transparent=true;
+  scene.add(g);
+  const g2 = g.clone(); g2.position.y = 17; g2.material.opacity=.09; scene.add(g2);
+
+  const nodes = [];
+  const shapes = [
+    new THREE.IcosahedronGeometry(4.2,1),
+    new THREE.TorusKnotGeometry(2.8,.75,90,12),
+    new THREE.OctahedronGeometry(4.6,1),
+    new THREE.TorusGeometry(3.6,1.1,10,34),
+    new THREE.DodecahedronGeometry(4.1,0),
+    new THREE.IcosahedronGeometry(3.6,0),
+    new THREE.BoxGeometry(5.4,5.4,5.4,2,2,2)
+  ];
+  shapes.forEach(function(geo,i){
+    const wire = new THREE.LineSegments(
+      new THREE.EdgesGeometry(geo),
+      new THREE.LineBasicMaterial({color: i===0 ? 0xccff00 : 0x5f7d8f, transparent:true, opacity:.72})
+    );
+    wire.position.set((i%2?7.5:-7.5), Math.sin(i*1.4)*3.4, -i*34);
+    scene.add(wire); nodes.push(wire);
+
+    const core = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+      color:0x0a1410, transparent:true, opacity:.82}));
+    core.position.copy(wire.position); scene.add(core);
+    wire.userData.core = core;
+  });
+
+  const sf = new THREE.BufferGeometry(); const sp=[];
+  for(var i=0;i<1900;i++) sp.push((Math.random()-.5)*280,(Math.random()-.5)*140,(Math.random()-.5)*340);
+  sf.setAttribute('position', new THREE.Float32BufferAttribute(sp,3));
+  scene.add(new THREE.Points(sf, new THREE.PointsMaterial({
+    color:0xccff00, size:.3, transparent:true, opacity:.42})));
+
+  return {
+    scene: scene, camera: camera,
+    update: function(t){
+      const z = 26 - travel*9;
+      nodes.forEach(function(n,i){
+        n.rotation.x = t*.16 + i; n.rotation.y = t*.22 + i;
+        n.userData.core.rotation.copy(n.rotation);
+        const near = Math.abs(n.position.z - (z-30)) < 20;
+        n.material.color.setHex(near ? 0xccff00 : 0x5f7d8f);
+        n.material.opacity = near ? .95 : .34;
+      });
+      camera.position.set(mouse.x*5.5, 1.6 - mouse.y*4.2, z);
+      camera.lookAt(mouse.x*2.2, -mouse.y*1.6, z-42);
+    }
+  };
+}
+
+/* ============================================================
+   C — BRUTALIST GALLERY
+   ============================================================ */
+function buildGallery(){
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xd8d2c7);
+  scene.fog = new THREE.Fog(0xd8d2c7, 30, 118);
+
+  const camera = new THREE.PerspectiveCamera(58, W/H, .1, 400);
+
+  scene.add(new THREE.AmbientLight(0xfff4e2, .78));
+  const sun = new THREE.DirectionalLight(0xfff1dc, 1.25);
+  sun.position.set(16,26,10); scene.add(sun);
+  const bounce = new THREE.DirectionalLight(0xb4442a, .3);
+  bounce.position.set(-14,-4,-8); scene.add(bounce);
+
+  const concrete = new THREE.MeshStandardMaterial({color:0xc6bfb2, roughness:.97, metalness:0});
+  const dark     = new THREE.MeshStandardMaterial({color:0x8e8779, roughness:.96, metalness:0});
+  const rust     = new THREE.MeshStandardMaterial({color:0xb4442a, roughness:.72, metalness:.12});
+
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(400,400),
+    new THREE.MeshStandardMaterial({color:0xbdb5a6, roughness:1}));
+  floor.rotation.x = -Math.PI/2; floor.position.y = -7; scene.add(floor);
+
+  for(var i=0;i<15;i++){
+    const h = 15 + (i%3)*5;
+    const L = new THREE.Mesh(new THREE.BoxGeometry(3.4, h, 15), i%4===0?dark:concrete);
+    L.position.set(-13, -7+h/2, -i*20); scene.add(L);
+    const R = new THREE.Mesh(new THREE.BoxGeometry(3.4, h+3, 15), i%3===0?dark:concrete);
+    R.position.set(13, -7+(h+3)/2, -i*20 - 9); scene.add(R);
+
+    if(i%3===1){
+      const art = new THREE.Mesh(new THREE.BoxGeometry(.4, 5.4, 8.2), rust);
+      art.position.set(-11.1, 3.4, -i*20); scene.add(art);
+    }
+    const beam = new THREE.Mesh(new THREE.BoxGeometry(30, 1.5, 2.6), concrete);
+    beam.position.set(0, 15, -i*20 - 10); scene.add(beam);
+  }
+
+  const mono = new THREE.Mesh(new THREE.BoxGeometry(9,26,9), dark);
+  mono.position.set(0, 6, -250); scene.add(mono);
+
+  return {
+    scene: scene, camera: camera,
+    update: function(t){
+      const z = 22 - travel*10;
+      camera.position.set(mouse.x*6.4, 1.4 - mouse.y*3.4, z);
+      camera.lookAt(mouse.x*3.2, -mouse.y*2.2 + 1, z-40);
+    }
+  };
+}
+
+/* ============================================================ */
+const COPY = {
+  a:{ eyebrow:'A · Inspection world',
+      title:'Muthu<b>kumar</b>',
+      blurb:'You fly alongside a pipeline in the dark. The camera behaves like an ultrasonic probe, and a hot scan line sweeps the steel ahead of you. Each weld seam it passes ignites and opens a section: a role, a project, a certification. Built out of the trade you actually practise.',
+      meta:'Station 03 / 09 — weld seam — front-end developer, LA Studios' },
+  b:{ eyebrow:'B · Wireframe cyberspace',
+      title:'Muthu<b>kumar</b>',
+      blurb:'A black void of glowing wire structures. Scrolling flies you deeper along the axis, and each structure you approach lights up and unfolds its content. Fast, sharp, unmistakably engineer. Also the most familiar of the three.',
+      meta:'Node 03 / 07 — front-end developer, LA Studios' },
+  c:{ eyebrow:'C · Brutalist gallery',
+      title:'Muthu<b>kumar</b>',
+      blurb:'A concrete corridor in hard daylight. Your timeline is the architecture itself, slabs receding into distance, and your work hangs on the walls in rust red. Calm and expensive-looking. Plays up taste over engineering.',
+      meta:'Bay 03 / 15 — front-end developer, LA Studios' }
+};
+
+let world = null, current = null;
+const builders = {a:buildInspection, b:buildCyber, c:buildGallery};
+
+function load(k){
+  if(current === k) return;
+  current = k;
+  travel = travelTarget = 0;
+  world = builders[k]();
+  world.camera.aspect = W/H; world.camera.updateProjectionMatrix();
+  document.body.className = k;
+  document.getElementById('eyebrow').textContent = COPY[k].eyebrow;
+  document.getElementById('title').innerHTML   = COPY[k].title;
+  document.getElementById('blurb').textContent = COPY[k].blurb;
+  document.getElementById('meta').textContent  = COPY[k].meta;
+  document.querySelectorAll('.switch button').forEach(function(b){
+    b.classList.toggle('on', b.dataset.w===k);
+  });
+}
+
+document.querySelectorAll('.switch button').forEach(function(b){
+  b.addEventListener('click', function(){ load(b.dataset.w); });
+});
+
+const clock = new THREE.Clock();
+(function loop(){
+  requestAnimationFrame(loop);
+  const t = clock.getElapsedTime();
+  mouse.x += (mouse.tx-mouse.x)*.05;
+  mouse.y += (mouse.ty-mouse.y)*.05;
+  travel  += (travelTarget-travel)*.06;
+  if(world){ world.update(t); renderer.render(world.scene, world.camera); }
+})();
+
+load('a');
+</script>
+</body>
+</html>
