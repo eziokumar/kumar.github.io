@@ -1,0 +1,298 @@
+{
+  "stages": [
+    {
+      "id": "hardware",
+      "no": "01",
+      "kind": "STAGE",
+      "title": "Hardware",
+      "accent": "teal",
+      "period": "2016 — 2018",
+      "location": "Malaysia",
+      "blurb": "A repair bench, a local network, and other people's broken machines. Boards, drivers, backups, permissions. The habit of hunting a fault starts here."
+    },
+    {
+      "id": "code",
+      "no": "02",
+      "kind": "STAGE",
+      "title": "Code",
+      "accent": "teal",
+      "period": "2018 — 2021",
+      "location": "Malaysia",
+      "blurb": "PHP and MySQL, then interfaces built from other people's mockups. Thirteen sites shipped across a CMS agency and a Shopify studio."
+    },
+    {
+      "id": "ar3d",
+      "no": "03",
+      "kind": "PROJECT ERA",
+      "title": "AR & 3D",
+      "accent": "teal",
+      "period": "2020",
+      "location": "University",
+      "blurb": "A point-of-sale running on a Raspberry Pi, and an augmented reality application for exploring laboratory projects. Its long-term aim was guiding technical work without an instructor present."
+    },
+    {
+      "id": "quality",
+      "no": "04",
+      "kind": "STAGE",
+      "title": "Quality",
+      "accent": "steel",
+      "period": "2021 — 2025",
+      "location": "Chennai, India",
+      "blurb": "Automotive fasteners, then cable manufacturing. In-process and final inspection against drawings, defects traced back to their cause, then a team to lead."
+    },
+    {
+      "id": "ndt",
+      "no": "05",
+      "kind": "STAGE",
+      "title": "NDT",
+      "accent": "amber",
+      "period": "2023 — 2024",
+      "location": "Bangalore, India",
+      "blurb": "Ultrasonic, magnetic particle, penetrant, visual and radiographic. Reading what the surface will not show you, then writing it down so somebody else can rely on it."
+    },
+    {
+      "id": "oilgas",
+      "no": "06",
+      "kind": "STAGE",
+      "title": "Oil & Gas",
+      "accent": "amber",
+      "period": "2025 — Present",
+      "location": "Abu Dhabi, UAE",
+      "blurb": "Pipelines, flowlines and gas trains. Six projects supported from inside an ISO/IEC 17020 inspection environment."
+    },
+    {
+      "id": "documentation",
+      "no": "07",
+      "kind": "STAGE",
+      "title": "Documentation",
+      "accent": "teal",
+      "period": "December 2025 — Present",
+      "location": "Abu Dhabi, UAE",
+      "blurb": "Procedures written and revised, technician competency tracked, calibration recorded, everything traceable. The software background, finally pointed at the inspection floor."
+    }
+  ],
+
+  "roles": [
+    {
+      "id": "bonline",
+      "stage": "hardware",
+      "title": "Computer Technician",
+      "company": "B Online Cybercafe",
+      "location": "Malaysia",
+      "period": null,
+      "periodNeeded": true,
+      "industry": "IT Support / Computer Services",
+      "summary": "Provided technical support and maintenance for computers, printers, scanners, peripherals and basic network and user-management activities.",
+      "responsibilities": [
+        "Troubleshoot computer hardware and software problems",
+        "Support customers with technical issues",
+        "Maintain computers, printers, scanners and peripherals",
+        "Configure user accounts and manage permissions",
+        "Support network connectivity",
+        "Perform system upgrades"
+      ],
+      "skills": ["Hardware troubleshooting", "Software troubleshooting", "Customer support", "Peripheral support", "Network troubleshooting", "User account management", "System upgrades", "Technical communication"],
+      "achievements": [
+        "Supported network stability",
+        "Assisted with system security",
+        "Supported system upgrades",
+        "Improved customer technical support"
+      ]
+    },
+    {
+      "id": "mecacom",
+      "stage": "hardware",
+      "title": "IT Support Technician",
+      "qualifier": "Internship",
+      "company": "Mecacom Technologies",
+      "location": "Malaysia",
+      "period": "March 2018 — July 2018",
+      "industry": "IT Support / Technology Services",
+      "summary": "Provided technical support for hardware, software, operating systems, drivers, backups and network-related activities.",
+      "responsibilities": [
+        "Install and update software applications",
+        "Configure operating systems, install and configure drivers",
+        "Troubleshoot hardware and software",
+        "Perform hardware maintenance",
+        "Support network-related issues",
+        "Assist with data backup and recovery"
+      ],
+      "skills": ["IT troubleshooting", "Hardware support", "Operating system configuration", "Driver management", "Backup and recovery", "Network troubleshooting", "User support"],
+      "achievements": [
+        "Developed practical IT support experience",
+        "Gained hands-on hardware and software troubleshooting skills",
+        "Supported system maintenance"
+      ]
+    },
+    {
+      "id": "searchneasy",
+      "stage": "code",
+      "title": "Junior Web Programmer",
+      "company": "SearchNEasy.com",
+      "location": "Malaysia",
+      "period": "August 2018 — August 2019",
+      "industry": "Web Development / Digital Services",
+      "summary": "Website development, maintenance and upgrades using front-end technologies, PHP and MySQL.",
+      "responsibilities": [
+        "Develop websites based on customer requirements",
+        "Convert design requirements into functional web pages",
+        "Develop responsive websites and JavaScript functionality",
+        "Develop PHP-based functionality and work with databases",
+        "Maintain and upgrade existing websites without losing existing information",
+        "Support deployment, troubleshoot issues and improve performance"
+      ],
+      "tech": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "MySQL Workbench", "FileZilla"],
+      "skills": ["Web programming", "PHP development", "Database fundamentals", "Responsive design", "Website maintenance", "Deployment", "Debugging", "Performance improvement"],
+      "achievements": [
+        "Contributed to successful website launches",
+        "Developed customer-specific web solutions",
+        "Improved website functionality and performance"
+      ]
+    },
+    {
+      "id": "lastudios",
+      "stage": "code",
+      "title": "Front-End Web Developer",
+      "company": "LA Studios",
+      "companyNote": "Shopify Expert",
+      "location": "Malaysia",
+      "period": "September 2019 — March 2021",
+      "industry": "Web Development / E-Commerce",
+      "summary": "Developed responsive websites and Shopify-based e-commerce experiences from design concepts and client requirements.",
+      "responsibilities": [
+        "Convert design mock-ups into functional web interfaces",
+        "Develop responsive websites and interactive UI components",
+        "Support cross-device and cross-browser compatibility",
+        "Customise Shopify websites",
+        "Debug and fix critical front-end issues",
+        "Use version control and collaborative development workflows"
+      ],
+      "tech": ["HTML", "CSS", "SASS", "JavaScript", "jQuery", "Shopify"],
+      "skills": ["Front-end development", "Responsive web design", "UI implementation", "CSS architecture", "Browser compatibility", "Debugging", "Version control", "Team collaboration"],
+      "achievements": [
+        "Resolved critical website bugs",
+        "Contributed to successful website implementations",
+        "Provided technical support for website projects"
+      ]
+    },
+    {
+      "id": "tvs",
+      "stage": "quality",
+      "title": "Quality Control Inspection",
+      "company": "TVS Sundram Fasteners Ltd",
+      "location": "Chennai, India",
+      "period": "December 2021 — May 2023",
+      "industry": "Automotive / Manufacturing / Quality Control",
+      "summary": "Supported production quality through in-process and final inspection, measurement, defect identification, reporting, data analysis and quality improvement.",
+      "responsibilities": [
+        "Monitor product quality during production",
+        "Inspect components against drawings, specifications and quality requirements",
+        "Identify non-conforming products and materials",
+        "Support setup approval and plan in-process inspection",
+        "Inspect machining components and support final inspection",
+        "Coordinate subordinate PDI activities",
+        "Perform dimensional inspection and analyse results",
+        "Prepare daily, weekly and monthly quality reports",
+        "Support root-cause analysis and corrective actions"
+      ],
+      "equipment": ["Contour Machine", "2D Micro Height Gauge", "Air Gauges"],
+      "skills": ["Quality control", "Dimensional inspection", "Blueprint interpretation", "Measurement", "Non-conformance identification", "Root-cause analysis", "Data analysis", "Quality reporting", "Production monitoring", "PDI coordination"],
+      "achievements": [
+        "Supported production inspection and quality control",
+        "Contributed to defect identification and analysis",
+        "Supported root-cause analysis and quality improvement",
+        "Developed practical experience in dimensional inspection"
+      ]
+    },
+    {
+      "id": "iqndt",
+      "stage": "ndt",
+      "title": "ASNT NDT Level II Technician",
+      "company": "IQ NDT Engineers",
+      "location": "Bangalore, India",
+      "period": "July 2023 — September 2024",
+      "industry": "NDT / Inspection / Industrial Services",
+      "summary": "Performed and supported NDT inspection across multiple methods, prepared inspection documentation and reports, supported client-site activities, and contributed to equipment, coordination and technician development.",
+      "methods": ["VT", "PT", "MPT", "UT", "RT", "RTFI"],
+      "responsibilities": [
+        "Perform NDT inspections according to approved procedures",
+        "Conduct visual, liquid penetrant, magnetic particle and ultrasonic testing",
+        "Support radiographic testing and RTFI activities",
+        "Interpret inspection results against applicable requirements",
+        "Prepare NDT inspection reports, daily and weekly reports, and monthly Excel reports",
+        "Apply applicable codes, standards and inspection requirements",
+        "Prepare SOPs for inspection activities at client sites",
+        "Coordinate with client representatives",
+        "Maintain NDT equipment and related documentation",
+        "Support calibration activities and maintain inspection records",
+        "Train and mentor junior technicians where required"
+      ],
+      "skills": ["Defect identification", "Result interpretation", "Inspection reporting", "Code and standard interpretation", "NDT procedure implementation", "Equipment setup", "Inspection planning", "Client communication", "Training and mentoring"],
+      "achievements": [
+        "Developed practical multi-method NDT experience",
+        "Supported preparation of inspection procedures and SOPs",
+        "Developed experience in technical reporting and data analysis",
+        "Supported client-site inspection activities",
+        "Supported training and mentoring of technicians"
+      ]
+    },
+    {
+      "id": "miracle",
+      "stage": "quality",
+      "title": "Quality Assurance — Team Lead",
+      "company": "Miracle Cable India Pvt Ltd",
+      "location": "Chennai, India",
+      "period": "October 2024 — November 2025",
+      "industry": "Manufacturing / Quality Assurance / Quality Control",
+      "summary": "Quality assurance with team-level responsibilities, supporting quality processes, inspection activities, reporting, data analysis and continuous improvement.",
+      "responsibilities": [
+        "Support implementation of quality assurance processes",
+        "Monitor product quality and compliance with defined requirements",
+        "Coordinate inspection activities",
+        "Review quality-related information and inspection results",
+        "Monitor non-conforming products and quality issues",
+        "Support root-cause analysis and coordinate corrective and preventive actions",
+        "Prepare quality reports and analyse quality data",
+        "Coordinate team activities related to inspection and quality control",
+        "Support process improvement initiatives"
+      ],
+      "skills": ["Team leadership", "Quality assurance", "Quality control", "Root-cause analysis", "Corrective action", "Data analysis", "Quality reporting", "Team coordination", "Process improvement"],
+      "achievements": [
+        "Supported quality improvement activities",
+        "Contributed to identification and resolution of recurring quality issues",
+        "Supported data-driven quality analysis",
+        "Coordinated quality activities across team members"
+      ],
+      "equipmentNeeded": true
+    },
+    {
+      "id": "alfa",
+      "stage": "documentation",
+      "current": true,
+      "title": "Technical Assistant",
+      "company": "Alfa Technical Service",
+      "location": "Abu Dhabi, United Arab Emirates",
+      "period": "December 2025 — Present",
+      "industry": "NDT / Inspection / Oil & Gas / Technical Services",
+      "context": "ISO/IEC 17020 inspection environment",
+      "summary": "Supporting NDT and inspection operations through technical documentation, procedure preparation, document control, technician certification and competency records, equipment documentation, project coordination and digitalization activities.",
+      "responsibilities": [
+        "Prepare, review, update and maintain NDT and inspection procedures",
+        "Modify procedures and technical documents according to client, project, code, standard and company requirements",
+        "Prepare project-specific technical documentation before client submission and approval",
+        "Support document control including revision control, distribution, traceability, filing and retrieval",
+        "Maintain technician qualification, certification, training, examination and competency records",
+        "Support planning and organisation of technician examinations",
+        "Assist ASNT Level III personnel with technical documentation, planning and NDT-related activities",
+        "Prepare and maintain NDT inspection reports and technical records",
+        "Maintain equipment and calibration-related documentation",
+        "Support project documentation and technical coordination",
+        "Maintain records required for internal reviews, client requirements, audits and accreditation activities",
+        "Support digitalization of technician records, certification records, inspection reporting and document management"
+      ],
+      "skills": ["NDT documentation", "Inspection procedures", "Procedure revision", "Technical reporting", "Equipment documentation", "Calibration records", "Inspection traceability", "Document control", "Revision management", "Record management", "Certification records", "Examination planning", "Level III support", "Process digitalization"],
+      "tools": ["Microsoft Excel", "Microsoft Office", "Carestream Industrex 7.2v", "Digital document management systems", "NDT reporting systems"],
+      "tags": ["Document control", "Revision control", "Procedure preparation", "Competency records", "Calibration records", "Traceability", "Digitalization"]
+    }
+  ]
+}

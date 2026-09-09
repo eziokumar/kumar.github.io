@@ -1,0 +1,76 @@
+{
+  "note": "Certification status is per method. 'level2' means ASNT NDT Level II certified. 'supported' means documented and supported in the current Technical Assistant role, not personally certified.",
+  "methods": [
+    {
+      "code": "VT",
+      "name": "Visual Testing",
+      "status": "level2",
+      "desc": "Direct and remote examination of surfaces and welds for discontinuities visible to the eye.",
+      "diagram": "vt"
+    },
+    {
+      "code": "PT",
+      "name": "Liquid Penetrant",
+      "status": "level2",
+      "desc": "Capillary action draws penetrant into surface-breaking defects, revealed by developer.",
+      "diagram": "pt"
+    },
+    {
+      "code": "MT",
+      "name": "Magnetic Particle",
+      "status": "level2",
+      "desc": "Flux leakage at surface and near-surface flaws gathers magnetic particles into an indication.",
+      "diagram": "mt"
+    },
+    {
+      "code": "UT",
+      "name": "Ultrasonic Testing",
+      "status": "level2",
+      "desc": "High-frequency sound reflects from internal discontinuities and the back wall.",
+      "diagram": "ut"
+    },
+    {
+      "code": "RT",
+      "name": "Radiographic Testing",
+      "status": "level2",
+      "desc": "Radiation records internal weld structure onto film or a digital detector.",
+      "note": "Also certified in RTFI, radiographic film interpretation.",
+      "diagram": "rt"
+    },
+    {
+      "code": "PAUT",
+      "name": "Phased Array UT",
+      "status": "supported",
+      "desc": "A multi-element probe steers the beam electronically to sweep the weld volume.",
+      "diagram": "paut"
+    },
+    {
+      "code": "PWHT",
+      "name": "Post Weld Heat Treatment",
+      "status": "supported",
+      "desc": "Controlled heating and cooling relieves residual stress introduced by welding.",
+      "diagram": "pwht"
+    },
+    {
+      "code": "HT",
+      "name": "Hardness Testing",
+      "status": "supported",
+      "desc": "Indentation resistance verifies material condition and heat-treatment result.",
+      "diagram": "ht"
+    },
+    {
+      "code": "PMI",
+      "name": "Positive Material ID",
+      "status": "supported",
+      "desc": "Alloy composition confirmed on site against the specified material grade.",
+      "diagram": "pmi"
+    },
+    {
+      "code": "FT",
+      "name": "Ferrite Testing",
+      "status": "supported",
+      "desc": "Ferrite content measured in austenitic and duplex stainless steel welds.",
+      "diagram": "ft"
+    }
+  ]
+}

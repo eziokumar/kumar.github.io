@@ -1,0 +1,65 @@
+{
+  "ndtSystem": {
+    "title": "NDT Management System",
+    "tagline": "Where the two halves finally meet.",
+    "intro": "Nineteen modules covering technicians, certification expiry, equipment calibration, procedures, report templates and document control. The web-development background applied directly to the inspection floor.",
+    "contentNeeded": "Project summary, role, screenshots, and confirmation of what may be shown publicly.",
+    "clusters": [
+      { "id": "people",  "label": "PEOPLE",  "icon": "people", "modules": ["Technicians", "Certifications", "Internal Certificates", "Technician Allocation", "Expiry Tracking"] },
+      { "id": "assets",  "label": "ASSETS",  "icon": "box",    "modules": ["Equipment", "Calibration", "Equipment Allocation"] },
+      { "id": "work",    "label": "WORK",    "icon": "case",   "modules": ["Clients", "Projects", "Procedures"] },
+      { "id": "output",  "label": "OUTPUT",  "icon": "doc",    "accent": true, "modules": ["Reports", "Report Templates", "PDF Generation"] },
+      { "id": "control", "label": "CONTROL", "icon": "lock",   "modules": ["Dashboard", "Documents", "Document Control", "Login", "Settings"] }
+    ],
+    "lifecycle": {
+      "label": "RECORD LIFECYCLE",
+      "rail": "EXPIRY TRACKING · REVISION CONTROL · DOCUMENT CONTROL",
+      "steps": [
+        { "t": "Technician", "s": "QUALIFIED" },
+        { "t": "Equipment",  "s": "CALIBRATED" },
+        { "t": "Procedure",  "s": "APPROVED" },
+        { "t": "Inspection", "s": "PERFORMED" },
+        { "t": "Report",     "s": "GENERATED" },
+        { "t": "Archived",   "s": "TRACEABLE", "accent": true }
+      ]
+    }
+  },
+
+  "smartCart": {
+    "title": "Smart Shopping Cart POS",
+    "badge": "FEATURED BUILD",
+    "period": "March — June 2020",
+    "desc": "An executable point-of-sale application built in VB with the WPF framework, running on Raspberry Pi OS and synchronised to the cloud. Shoppers scan any RFID-tagged product at the cart-mounted reader and see product code, description, unit price, quantity and running total in real time. A built-in aisle locator helps find items, checkout runs through an auto-generated QR code, and the receipt is emailed automatically.",
+    "tech": ["VB.NET", "WPF", "Raspberry Pi OS", "RFID", "Cloud sync", "QR payment", "Email automation"],
+    "workflow": ["RFID Scan", "Product Detected", "Raspberry Pi", "POS Interface", "Cart Total", "QR Payment", "Email Receipt"],
+    "workflowRail": "CLOUD SYNCHRONISATION",
+    "gallery": "smart-cart-pos"
+  },
+
+  "ar": {
+    "title": "AR Application for the Faculty of Science",
+    "tagline": "The idea that predicted the career.",
+    "desc": "Point a phone or tablet at a student project in the laboratory and the application recognises it, then overlays the information a printed label never fits. Touch a part of the AR object and that component highlights and explains itself.",
+    "onRecognition": ["Project title and creators", "Department", "Description and objectives", "Components", "Technical specifications", "Photographs and videos", "Animations and multimedia"],
+    "interactive": ["Select a component to highlight it", "Read its purpose and function", "Watch assembly sequences", "Watch disassembly sequences", "See how parts connect"],
+    "tags": ["Object recognition", "3D models", "Animation"],
+    "visionLabel": "LONG-TERM TECHNICAL VISION — INDUSTRIAL MAINTENANCE",
+    "vision": ["Scan the machine", "Select a procedure", "Highlight the component", "Step-by-step overlay", "Procedure completed"],
+    "accuracy": "This is a university concept project. It was not commercially deployed and has not been used in an industrial environment. Engineering applications are presented as potential future uses.",
+    "assetsNeeded": "Screenshots, demo video, 3D models, architecture diagram."
+  },
+
+  "shopify": {
+    "title": "Shopify Storefronts",
+    "meta": "LA Studios · 2019 — 2021",
+    "tech": ["HTML", "CSS", "SASS", "JavaScript", "jQuery", "Shopify"],
+    "sites": ["luxfoless.com", "myeggwhite.my", "timekeeper.store", "revelot.com", "xsecret.my", "lisaadam.com.my", "ideahouse.com.my"]
+  },
+
+  "cms": {
+    "title": "CMS & Web Builds",
+    "meta": "SearchNEasy.com · 2018 — 2019",
+    "tech": ["PHP", "MySQL", "MySQL Workbench", "FileZilla", "JavaScript"],
+    "sites": ["ledex.searchneasy.com", "eyepad.my", "restaurant.searchneasy.com", "ancpharma.com", "luxfoless.com", "tecxans.searchneasy.com"]
+  }
+}

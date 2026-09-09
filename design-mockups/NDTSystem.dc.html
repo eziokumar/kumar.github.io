@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+  <style>
+    body { margin: 0; background: #0A0E12; }
+    a { color: #F0A63C; text-decoration: none; }
+    a:hover { color: #FFC46B; }
+    * { box-sizing: border-box; }
+    .cluster { border: 1px solid #1D2733; background: #0D1319; padding: 20px 20px 22px 20px; }
+    .cluster .ch { display: flex; align-items: center; gap: 9px; margin-bottom: 16px; }
+    .cluster .ct { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #4FB3B8; }
+    .mod { display: flex; align-items: center; gap: 9px; padding: 8px 10px; border: 1px solid #1A242F; background: #101822; font-size: 12.5px; color: #A9B8C7; }
+    .mod span.d { width: 4px; height: 4px; border-radius: 50%; background: #F0A63C; flex-shrink: 0; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 940px; background: #0A0E12; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #E6ECF2; position: relative; overflow: hidden; padding: 56px 48px;">
+
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(79,179,184,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(79,179,184,0.045) 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+  <div style="position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid #1D2733; margin-bottom: 30px;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.26em; color: #F0A63C;">06</span>
+        <span style="width: 26px; height: 1px; background: #2A3846;"></span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.26em; color: #5F7183;">NDT MANAGEMENT SYSTEM</span>
+      </div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 46px; line-height: 1.02; letter-spacing: -0.03em; margin: 0; color: #F3F7FA;">Where the two<br>halves finally meet.</h2>
+    </div>
+    <p style="font-size: 14px; line-height: 1.66; color: #8494A5; max-width: 420px; margin: 0 0 6px 0; text-wrap: pretty;">Nineteen modules covering technicians, certification expiry, equipment calibration, procedures, report templates and document control. The web-development background applied directly to the inspection floor.</p>
+  </div>
+
+  <!-- description slot -->
+  <div style="position: relative; display: flex; align-items: center; gap: 14px; border: 1px dashed #7A5A25; background: #12100C; padding: 14px 20px; margin-bottom: 26px;">
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #F0A63C; flex-shrink: 0;">[ CONTENT NEEDED ]</span>
+    <span style="font-size: 13px; color: #8494A5;">Project summary, your role, screenshots, and confirmation of what may be shown publicly.</span>
+  </div>
+
+  <!-- MODULE MAP -->
+  <div style="position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; margin-bottom: 26px;">
+
+    <div class="cluster">
+      <div class="ch">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4FB3B8" stroke-width="1.5"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg>
+        <span class="ct">PEOPLE</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div class="mod"><span class="d"></span>Technicians</div>
+        <div class="mod"><span class="d"></span>Certifications</div>
+        <div class="mod"><span class="d"></span>Internal Certificates</div>
+        <div class="mod"><span class="d"></span>Technician Allocation</div>
+        <div class="mod"><span class="d"></span>Expiry Tracking</div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="ch">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4FB3B8" stroke-width="1.5"><path d="M3 8.5 12 4l9 4.5v7L12 20l-9-4.5Z"/><path d="M3 8.5 12 13l9-4.5M12 13v7"/></svg>
+        <span class="ct">ASSETS</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div class="mod"><span class="d"></span>Equipment</div>
+        <div class="mod"><span class="d"></span>Calibration</div>
+        <div class="mod"><span class="d"></span>Equipment Allocation</div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="ch">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4FB3B8" stroke-width="1.5"><rect x="3" y="6.5" width="18" height="14" rx="1.5"/><path d="M8.5 6.5V4.5h7v2M3 12h18"/></svg>
+        <span class="ct">WORK</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div class="mod"><span class="d"></span>Clients</div>
+        <div class="mod"><span class="d"></span>Projects</div>
+        <div class="mod"><span class="d"></span>Procedures</div>
+      </div>
+    </div>
+
+    <div class="cluster" style="border-color: #F0A63C; background: #100E0A;">
+      <div class="ch">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F0A63C" stroke-width="1.5"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h4"/></svg>
+        <span class="ct" style="color:#F0A63C;">OUTPUT</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div class="mod" style="border-color:#2A2318;background:#151109;"><span class="d"></span>Reports</div>
+        <div class="mod" style="border-color:#2A2318;background:#151109;"><span class="d"></span>Report Templates</div>
+        <div class="mod" style="border-color:#2A2318;background:#151109;"><span class="d"></span>PDF Generation</div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="ch">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4FB3B8" stroke-width="1.5"><rect x="4" y="10" width="16" height="10.5" rx="1.5"/><path d="M8 10V6.8a4 4 0 0 1 8 0V10"/></svg>
+        <span class="ct">CONTROL</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px;">
+        <div class="mod"><span class="d"></span>Dashboard</div>
+        <div class="mod"><span class="d"></span>Documents</div>
+        <div class="mod"><span class="d"></span>Document Control</div>
+        <div class="mod"><span class="d"></span>Login</div>
+        <div class="mod"><span class="d"></span>Settings</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW STRIP -->
+  <div style="position: relative; border: 1px solid #1D2733; background: #0C1116; padding: 26px 30px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #5F7183; margin-bottom: 20px;">RECORD LIFECYCLE</div>
+    <svg viewBox="0 0 1284 120" style="display:block;width:100%;">
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L7 4 L0 8" fill="none" stroke="#F0A63C" stroke-width="1.4"/>
+        </marker>
+      </defs>
+
+      <g font-family="'IBM Plex Sans',sans-serif" font-size="13.5">
+        <rect x="0" y="34" width="176" height="52" fill="#101822" stroke="#2A3846"/>
+        <text x="88" y="58" text-anchor="middle" fill="#C3CEDA">Technician</text>
+        <text x="88" y="74" text-anchor="middle" fill="#5F7183" font-family="'IBM Plex Mono',monospace" font-size="10">QUALIFIED</text>
+
+        <rect x="222" y="34" width="176" height="52" fill="#101822" stroke="#2A3846"/>
+        <text x="310" y="58" text-anchor="middle" fill="#C3CEDA">Equipment</text>
+        <text x="310" y="74" text-anchor="middle" fill="#5F7183" font-family="'IBM Plex Mono',monospace" font-size="10">CALIBRATED</text>
+
+        <rect x="444" y="34" width="176" height="52" fill="#101822" stroke="#2A3846"/>
+        <text x="532" y="58" text-anchor="middle" fill="#C3CEDA">Procedure</text>
+        <text x="532" y="74" text-anchor="middle" fill="#5F7183" font-family="'IBM Plex Mono',monospace" font-size="10">APPROVED</text>
+
+        <rect x="666" y="34" width="176" height="52" fill="#101822" stroke="#2A3846"/>
+        <text x="754" y="58" text-anchor="middle" fill="#C3CEDA">Inspection</text>
+        <text x="754" y="74" text-anchor="middle" fill="#5F7183" font-family="'IBM Plex Mono',monospace" font-size="10">PERFORMED</text>
+
+        <rect x="888" y="34" width="176" height="52" fill="#101822" stroke="#2A3846"/>
+        <text x="976" y="58" text-anchor="middle" fill="#C3CEDA">Report</text>
+        <text x="976" y="74" text-anchor="middle" fill="#5F7183" font-family="'IBM Plex Mono',monospace" font-size="10">GENERATED</text>
+
+        <rect x="1108" y="34" width="176" height="52" fill="#12100C" stroke="#F0A63C"/>
+        <text x="1196" y="58" text-anchor="middle" fill="#F3F7FA">Archived</text>
+        <text x="1196" y="74" text-anchor="middle" fill="#F0A63C" font-family="'IBM Plex Mono',monospace" font-size="10">TRACEABLE</text>
+      </g>
+
+      <g stroke="#F0A63C" stroke-width="1.3" marker-end="url(#ar)">
+        <path d="M176 60 H214"/><path d="M398 60 H436"/><path d="M620 60 H658"/><path d="M842 60 H880"/><path d="M1064 60 H1100"/>
+      </g>
+
+      <g stroke="#2A3846" stroke-width="1" stroke-dasharray="3 4">
+        <path d="M88 34 V14 H1196 V34"/>
+      </g>
+      <text x="642" y="9" text-anchor="middle" fill="#4A5B6C" font-family="'IBM Plex Mono',monospace" font-size="9.5" letter-spacing="1.6">EXPIRY TRACKING · REVISION CONTROL · DOCUMENT CONTROL</text>
+    </svg>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

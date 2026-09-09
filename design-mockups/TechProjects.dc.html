@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+  <style>
+    body { margin: 0; background: #0A0E12; }
+    a { color: #F0A63C; text-decoration: none; }
+    a:hover { color: #FFC46B; }
+    * { box-sizing: border-box; }
+    .tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #9FB0C1; border: 1px solid #2A3846; padding: 5px 9px; }
+    .site { display: flex; align-items: center; gap: 9px; padding: 10px 12px; border: 1px solid #1A242F; background: #101822; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A9B8C7; }
+    .slot { border: 1px dashed #2A3846; background: #0B1116; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #3A4A5B; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 960px; background: #0A0E12; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #E6ECF2; position: relative; overflow: hidden; padding: 56px 48px;">
+
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(79,179,184,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(79,179,184,0.045) 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+  <div style="position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid #1D2733; margin-bottom: 30px;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.26em; color: #F0A63C;">07</span>
+        <span style="width: 26px; height: 1px; background: #2A3846;"></span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.26em; color: #5F7183;">TECHNOLOGY PROJECTS</span>
+      </div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 46px; line-height: 1.02; letter-spacing: -0.03em; margin: 0; color: #F3F7FA;">Hardware, cloud,<br>and thirteen storefronts.</h2>
+    </div>
+    <p style="font-size: 14px; line-height: 1.66; color: #8494A5; max-width: 380px; margin: 0 0 6px 0; text-wrap: pretty;">Built between 2018 and 2021 in Malaysia, before the move into inspection. The engineering instinct was already there.</p>
+  </div>
+
+  <!-- SMART CART -->
+  <div style="position: relative; border: 1px solid #F0A63C; background: linear-gradient(180deg, #10161D 0%, #0C1116 100%); margin-bottom: 22px;">
+    <div style="display: flex;">
+      <div style="flex-grow: 1; padding: 28px 32px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #0A0E12; background: #F0A63C; padding: 4px 9px;">FEATURED BUILD</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; color: #5F7183;">MARCH — JUNE 2020</span>
+        </div>
+        <h3 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.015em; margin: 0 0 10px 0; color: #F3F7FA;">Smart Shopping Cart POS</h3>
+        <p style="font-size: 14px; line-height: 1.68; color: #97A6B6; margin: 0 0 18px 0; max-width: 560px; text-wrap: pretty;">An executable point-of-sale application built in VB with the WPF framework, running on Raspberry Pi OS and synchronised to the cloud. Shoppers scan any RFID-tagged product at the cart-mounted reader and see product code, description, unit price, quantity and running total in real time. A built-in aisle locator helps find items, checkout runs through an auto-generated QR code, and the receipt is emailed automatically.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span class="tag">VB.NET</span><span class="tag">WPF</span><span class="tag">RASPBERRY PI OS</span><span class="tag">RFID</span><span class="tag">CLOUD SYNC</span><span class="tag">QR PAYMENT</span><span class="tag">EMAIL AUTOMATION</span>
+        </div>
+      </div>
+      <div class="slot" style="width: 300px; flex-shrink: 0; border-left: 1px solid #1D2733; border-top: 0; border-right: 0; border-bottom: 0;">[ SCREENSHOT ]</div>
+    </div>
+
+    <!-- workflow -->
+    <div style="border-top: 1px solid #1D2733; padding: 24px 32px;">
+      <svg viewBox="0 0 1310 96" style="display:block;width:100%;">
+        <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8" fill="none" stroke="#F0A63C" stroke-width="1.4"/></marker></defs>
+        <g font-family="'IBM Plex Sans',sans-serif" font-size="12.5">
+          <g>
+            <rect x="0" y="26" width="150" height="46" fill="#101822" stroke="#2A3846"/>
+            <path d="M22 44 h10 v10 h-10z M26 40 v18" stroke="#4FB3B8" stroke-width="1.2" fill="none"/>
+            <text x="88" y="53" text-anchor="middle" fill="#C3CEDA">RFID Scan</text>
+          </g>
+          <g>
+            <rect x="193" y="26" width="150" height="46" fill="#101822" stroke="#2A3846"/>
+            <text x="268" y="53" text-anchor="middle" fill="#C3CEDA">Product Detected</text>
+          </g>
+          <g>
+            <rect x="386" y="26" width="150" height="46" fill="#101822" stroke="#2A3846"/>
+            <text x="461" y="53" text-anchor="middle" fill="#C3CEDA">Raspberry Pi</text>
+          </g>
+          <g>
+            <rect x="579" y="26" width="150" height="46" fill="#101822" stroke="#2A3846"/>
+            <text x="654" y="53" text-anchor="middle" fill="#C3CEDA">POS Interface</text>
+          </g>
+          <g>
+            <rect x="772" y="26" width="150" height="46" fill="#101822" stroke="#2A3846"/>
+            <text x="847" y="53" text-anchor="middle" fill="#C3CEDA">Cart Total</text>
+          </g>
+          <g>
+            <rect x="965" y="26" width="150" height="46" fill="#101822" stroke="#2A3846"/>
+            <text x="1040" y="53" text-anchor="middle" fill="#C3CEDA">QR Payment</text>
+          </g>
+          <g>
+            <rect x="1158" y="26" width="152" height="46" fill="#12100C" stroke="#F0A63C"/>
+            <text x="1234" y="53" text-anchor="middle" fill="#F3F7FA">Email Receipt</text>
+          </g>
+        </g>
+        <g stroke="#F0A63C" stroke-width="1.3" marker-end="url(#a2)">
+          <path d="M150 49 H185"/><path d="M343 49 H378"/><path d="M536 49 H571"/><path d="M729 49 H764"/><path d="M922 49 H957"/><path d="M1115 49 H1150"/>
+        </g>
+        <g stroke="#2A3846" stroke-width="1" stroke-dasharray="3 4"><path d="M461 26 V10 H1040 V26"/></g>
+        <text x="750" y="6" text-anchor="middle" fill="#4A5B6C" font-family="'IBM Plex Mono',monospace" font-size="9.5" letter-spacing="1.6">CLOUD SYNCHRONISATION</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SHOPIFY + CMS -->
+  <div style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+
+    <div style="border: 1px solid #1D2733; background: #0D1319; padding: 26px 28px 28px 28px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px;">
+        <h3 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; margin: 0; color: #F3F7FA;">Shopify Storefronts</h3>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4FB3B8;">07 SITES</span>
+      </div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5F7183; margin-bottom: 20px;">LA STUDIOS · 2019 — 2021</div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>luxfoless.com</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>myeggwhite.my</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>timekeeper.store</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>revelot.com</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>xsecret.my</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>lisaadam.com.my</div>
+        <div class="site" style="grid-column: span 2;"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>ideahouse.com.my</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; padding-top: 18px; border-top: 1px dashed #22303D;">
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SASS</span><span class="tag">JAVASCRIPT</span><span class="tag">JQUERY</span><span class="tag">SHOPIFY</span>
+      </div>
+    </div>
+
+    <div style="border: 1px solid #1D2733; background: #0D1319; padding: 26px 28px 28px 28px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px;">
+        <h3 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; margin: 0; color: #F3F7FA;">CMS &amp; Web Builds</h3>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4FB3B8;">06 SITES</span>
+      </div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5F7183; margin-bottom: 20px;">SEARCHNEASY.COM · 2018 — 2019</div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>ledex.searchneasy.com</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>eyepad.my</div>
+        <div class="site" style="grid-column: span 2;"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>restaurant.searchneasy.com</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>ancpharma.com</div>
+        <div class="site"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>luxfoless.com</div>
+        <div class="site" style="grid-column: span 2;"><span style="width:4px;height:4px;border-radius:50%;background:#4FB3B8;"></span>tecxans.searchneasy.com</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; padding-top: 18px; border-top: 1px dashed #22303D;">
+        <span class="tag">PHP</span><span class="tag">MYSQL</span><span class="tag">MYSQL WORKBENCH</span><span class="tag">FILEZILLA</span><span class="tag">JAVASCRIPT</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

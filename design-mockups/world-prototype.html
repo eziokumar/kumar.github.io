@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Muthukumar — 3D world prototype</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#04070A;color:#E6ECF2;font-family:'IBM Plex Sans',system-ui,sans-serif}
+
+  #c{position:fixed;inset:0;display:block;z-index:0}
+  #spacer{position:relative;z-index:1;pointer-events:none}
+  .fixed{position:fixed;z-index:3;pointer-events:none}
+
+  .top{top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;
+       height:62px;padding:0 32px;border-bottom:1px solid rgba(24,36,46,.9);
+       background:linear-gradient(180deg,rgba(4,7,10,.94),rgba(4,7,10,.35))}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;
+         font-weight:700;font-size:13px;letter-spacing:.16em}
+  .mode{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#4C6070}
+
+  .panel{left:32px;top:112px;width:412px}
+  .stage-no{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+  .stage-no b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:#F0A63C;font-weight:500}
+  .stage-no i{width:24px;height:1px;background:#25384A;display:block}
+  .stage-no span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:#4C6070}
+  .panel h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:50px;line-height:.98;
+            letter-spacing:-.035em;margin-bottom:16px;color:#F3F7FA}
+  .panel p{font-size:14px;line-height:1.68;color:#8798A9;margin-bottom:20px;max-width:382px;text-wrap:pretty}
+  .roles{display:flex;flex-direction:column;gap:8px}
+  .role{display:flex;gap:12px;align-items:baseline;padding:10px 13px;
+        border:1px solid rgba(37,56,74,.9);background:rgba(7,13,19,.72)}
+  .role em{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;
+           color:#F0A63C;font-style:normal;flex-shrink:0;width:104px}
+  .role b{font-weight:500;font-size:13px;color:#D3DDE7}
+  .role s{text-decoration:none;font-size:12.5px;color:#657888}
+  .panel{transition:opacity .45s ease}
+
+  .rail{right:32px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1px;pointer-events:auto}
+  .tick{display:flex;align-items:center;gap:12px;justify-content:flex-end;cursor:pointer;
+        padding:7px 0;background:none;border:0;font-family:'IBM Plex Mono',monospace;
+        font-size:10px;letter-spacing:.16em;color:#38495A;transition:color .3s}
+  .tick:hover{color:#8798A9}
+  .tick .bar{width:24px;height:2px;background:#1E2E3C;transition:all .35s}
+  .tick.on{color:#F0A63C}
+  .tick.on .bar{width:44px;background:#F0A63C}
+
+  .bottom{left:0;right:0;bottom:0;display:flex;border-top:1px solid rgba(24,36,46,.9);background:rgba(4,7,10,.86)}
+  .cell{padding:14px 24px;border-right:1px solid rgba(24,36,46,.9);
+        font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#4C6070}
+  .cell b{display:block;color:#C3CEDA;font-size:12px;letter-spacing:.08em;margin-top:5px;font-weight:400}
+  .cell.amb b{color:#F0A63C}
+  .grow{flex-grow:1;border-right:0;display:flex;align-items:center;justify-content:flex-end;gap:10px}
+  .pulse{width:7px;height:7px;border-radius:50%;background:#F0A63C;animation:p 2s infinite}
+  @keyframes p{0%,100%{opacity:1}50%{opacity:.22}}
+
+  .prog{position:fixed;left:0;top:62px;height:2px;background:#F0A63C;z-index:4;width:0}
+  .hint{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);z-index:3;
+        font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;
+        color:#38495A;transition:opacity .6s}
+
+  @media (max-width:900px){
+    .panel{width:auto;right:32px;top:92px}
+    .panel h2{font-size:32px}
+    .rail{display:none}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+<div class="prog" id="prog"></div>
+
+<div class="fixed top">
+  <div class="brand">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0A63C" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg>
+    MUTHUKUMAR
+  </div>
+  <div class="mode">3D WORLD PROTOTYPE · SCROLL TO FLY</div>
+</div>
+
+<div class="fixed panel" id="panel">
+  <div class="stage-no"><b id="sNo">01</b><i></i><span id="sKind">STAGE</span></div>
+  <h2 id="sTitle">Hardware</h2>
+  <p id="sDesc"></p>
+  <div class="roles" id="sRoles"></div>
+</div>
+
+<div class="fixed rail" id="rail"></div>
+
+<div class="fixed bottom">
+  <div class="cell amb">POSITION<b id="rPos">STAGE 01 / 07</b></div>
+  <div class="cell">PERIOD<b id="rPeriod">—</b></div>
+  <div class="cell">LOCATION<b id="rLoc">—</b></div>
+  <div class="cell grow"><span class="pulse"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#4C6070">SCAN ACTIVE</span></div>
+</div>
+
+<div class="hint" id="hint">SCROLL · OR CLICK A STAGE ON THE RIGHT</div>
+<div id="spacer"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ============================================================
+   CONTENT — every fact here comes from the master brief
+   ============================================================ */
+const STAGES = [
+  { no:'01', kind:'STAGE', title:'Hardware', accent:0x4FB3B8,
+    period:'2016 — 2018', loc:'Malaysia',
+    desc:'A repair bench, a local network, and other people’s broken machines. Boards, drivers, backups, permissions. The habit of hunting a fault starts here.',
+    roles:[{p:'[DATES NEEDED]',t:'Computer Technician',s:'B Online Cybercafe'},
+           {p:'MAR — JUL 2018',t:'IT Support (Intern)',s:'Mecacom Technologies'}]},
+
+  { no:'02', kind:'STAGE', title:'Code', accent:0x4FB3B8,
+    period:'2018 — 2021', loc:'Malaysia',
+    desc:'PHP and MySQL, then interfaces built from other people’s mockups. Thirteen sites shipped across a CMS agency and a Shopify studio.',
+    roles:[{p:'AUG 2018 — AUG 2019',t:'Junior Web Programmer',s:'SearchNEasy.com'},
+           {p:'SEP 2019 — MAR 2021',t:'Front-End Developer',s:'LA Studios · Shopify'}]},
+
+  { no:'03', kind:'PROJECT ERA', title:'AR & 3D', accent:0x4FB3B8,
+    period:'2020', loc:'University',
+    desc:'A point-of-sale running on a Raspberry Pi, and an augmented reality app for exploring laboratory projects. Its long-term aim was guiding technical work without an instructor present. That turned out to be prophetic.',
+    roles:[{p:'MAR — JUN 2020',t:'Smart Shopping Cart POS',s:'RFID · Raspberry Pi · Cloud'},
+           {p:'CONCEPT',t:'AR Application',s:'Faculty of Science'}]},
+
+  { no:'04', kind:'STAGE', title:'Quality', accent:0x8FA6BD,
+    period:'2021 — 2023', loc:'Chennai, India',
+    desc:'Automotive fasteners, measured. In-process and final inspection against drawings, contour machine and air gauges, defects traced back to their cause.',
+    roles:[{p:'DEC 2021 — MAY 2023',t:'Quality Control Inspection',s:'TVS Sundram Fasteners'}]},
+
+  { no:'05', kind:'STAGE', title:'NDT', accent:0xF0A63C,
+    period:'2023 — 2024', loc:'Bangalore, India',
+    desc:'Ultrasonic, magnetic particle, penetrant, visual and radiographic. Reading what the surface will not show you, then writing it down so somebody else can rely on it.',
+    roles:[{p:'JUL 2023 — SEP 2024',t:'ASNT NDT Level II',s:'IQ NDT Engineers'},
+           {p:'CERTIFIED',t:'VT · PT · MPT · UT · RT · RTFI',s:'Six methods'}]},
+
+  { no:'06', kind:'STAGE', title:'Oil & Gas', accent:0xF0A63C,
+    period:'2024 — PRESENT', loc:'Abu Dhabi, UAE',
+    desc:'Pipelines, flowlines and gas trains. Six projects supported from inside an ISO/IEC 17020 inspection environment.',
+    roles:[{p:'PROJECTS',t:'INEOS · ADNOC MERAM · Petrofac',s:'Das Island P5'},
+           {p:'PROJECTS',t:'Lower Zakum · Asab & Sahil · Buhasa',s:'Tie-in & flowline'}]},
+
+  { no:'07', kind:'STAGE', title:'Documentation', accent:0x4FB3B8,
+    period:'DEC 2025 — PRESENT', loc:'Abu Dhabi, UAE',
+    desc:'Procedures written and revised, technician competency tracked, calibration recorded, everything traceable. The software background, finally pointed at the inspection floor.',
+    roles:[{p:'DEC 2025 — NOW',t:'Technical Assistant',s:'Alfa Technical Service'},
+           {p:'BUILDING',t:'NDT Management System',s:'19 modules'}]}
+];
+
+const GAP   = 260;
+const TOTAL = (STAGES.length - 1) * GAP;
+const DIM   = new THREE.Color(0x27394A);      // wire colour when far away
+
+/* ============================================================ */
+const canvas   = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x04070A);
+scene.fog = new THREE.FogExp2(0x04070A, 0.0042);
+
+const camera = new THREE.PerspectiveCamera(62, innerWidth/innerHeight, 0.5, 1400);
+
+const probe = new THREE.PointLight(0xF0A63C, 2.2, 190, 2);
+scene.add(probe);
+scene.add(new THREE.AmbientLight(0x33465A, 0.5));
+
+/* ---------- wireframe helpers ---------- */
+const groups = [];
+let G = null;                                   // group being built
+
+function fill(op){                              // dark inner solid, hides back edges
+  return new THREE.MeshBasicMaterial({color:0x060B10, transparent:true, opacity: op === undefined ? .92 : op});
+}
+/** add a wireframe shell (+ optional dark fill) and register it for glow */
+function wireMesh(geo, opts){
+  opts = opts || {};
+  const holder = new THREE.Object3D();
+  if (opts.fill !== false){
+    holder.add(new THREE.Mesh(geo, fill(opts.fillOpacity)));
+  }
+  const line = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geo, opts.angle === undefined ? 12 : opts.angle),
+    new THREE.LineBasicMaterial({color: DIM.clone(), transparent:true, opacity: opts.opacity === undefined ? .85 : opts.opacity})
+  );
+  holder.add(line);
+  G.userData.glow.push({line: line, base: opts.opacity === undefined ? .85 : opts.opacity, hot: opts.hot});
+  G.add(holder);
+  return holder;
+}
+/** a glowing polyline from an array of [x,y,z] */
+function poly(points, opts){
+  opts = opts || {};
+  const g = new THREE.BufferGeometry().setFromPoints(points.map(p => new THREE.Vector3(p[0],p[1],p[2])));
+  const line = new THREE.Line(g, new THREE.LineBasicMaterial({
+    color: DIM.clone(), transparent:true, opacity: opts.opacity === undefined ? .7 : opts.opacity}));
+  G.userData.glow.push({line: line, base: opts.opacity === undefined ? .7 : opts.opacity, hot: opts.hot});
+  G.add(line);
+  return line;
+}
+/** always-hot emissive bit (scan ring, hotspots) */
+function hot(geo, color, op){
+  const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: color, transparent:true, opacity: op === undefined ? 1 : op}));
+  G.userData.emissive.push({m: m.material, base: op === undefined ? 1 : op});
+  G.add(m);
+  return m;
+}
+
+/* ============================================================
+   01 — HARDWARE : circuit boards, chips, connectors
+   ============================================================ */
+function s01(){
+  [[-62, 14, -40, -0.5], [58, -18, 30, 0.42], [-40, -34, 70, 0.2]].forEach(function(p){
+    const board = wireMesh(new THREE.BoxGeometry(72, 1.6, 52));
+    board.position.set(p[0], p[1], p[2]); board.rotation.z = p[3]; board.rotation.y = p[3]*0.6;
+
+    for (let i = 0; i < 5; i++){
+      const c = wireMesh(new THREE.BoxGeometry(7 + Math.random()*7, 3, 6 + Math.random()*6));
+      c.position.set(p[0] + (Math.random()-.5)*54, p[1] + 2.4, p[2] + (Math.random()-.5)*36);
+      c.rotation.z = p[3]; c.rotation.y = p[3]*0.6;
+    }
+    // traces
+    for (let i = 0; i < 7; i++){
+      let x = p[0] + (Math.random()-.5)*60, z = p[2] + (Math.random()-.5)*44;
+      const pts = [[x, p[1]+1.2, z]];
+      for (let s = 0; s < 3; s++){
+        if (Math.random() > .5) x += (Math.random()-.5)*30; else z += (Math.random()-.5)*24;
+        pts.push([x, p[1]+1.2, z]);
+      }
+      poly(pts, {opacity:.5});
+    }
+  });
+
+  // RAM / card edges standing off the path
+  for (let i = 0; i < 6; i++){
+    const s = wireMesh(new THREE.BoxGeometry(34, 9, 1.4));
+    s.position.set((i%2?1:-1)*(74 + Math.random()*26), -6 + i*9, -70 + i*26);
+    s.rotation.y = (i%2?-1:1)*0.5;
+  }
+  // connector nodes
+  for (let i = 0; i < 22; i++){
+    hot(new THREE.SphereGeometry(.85, 8, 8), 0x4FB3B8, .75)
+      .position.set((Math.random()-.5)*220, (Math.random()-.5)*130, (Math.random()-.5)*180);
+  }
+}
+
+/* ============================================================
+   02 — CODE : editor frames, brackets, streaming lines
+   ============================================================ */
+function s02(){
+  [[-68, 20, -30, .55], [64, -6, 20, -.5], [-52, -32, 66, .4], [58, 34, 74, -.42]].forEach(function(p){
+    const w = 58, h = 38;
+    const f = wireMesh(new THREE.BoxGeometry(w, h, 1.2), {fillOpacity:.95});
+    f.position.set(p[0], p[1], p[2]); f.rotation.y = p[3];
+
+    // title rule
+    poly([[-w/2+3, h/2-5, .9],[w/2-3, h/2-5, .9]], {opacity:.55}).position.set(p[0],p[1],p[2]);
+    G.children[G.children.length-1].rotation.y = p[3];
+
+    // code lines
+    for (let L = 0; L < 6; L++){
+      const len = 10 + Math.random()*30;
+      const ln = hot(new THREE.BoxGeometry(len, .7, .5), L === 2 ? 0xF0A63C : 0x4FB3B8, L === 2 ? .95 : .42);
+      ln.position.set(p[0], p[1], p[2]); ln.rotation.y = p[3];
+      ln.translateX(-w/2 + len/2 + 5); ln.translateY(6 - L*5); ln.translateZ(.9);
+    }
+  });
+
+  // giant bracket glyphs flanking the path
+  poly([[-30,26,-120],[-44,10,-120],[-30,-6,-120]], {opacity:.8, hot:0xF0A63C});
+  poly([[ 30,26,-120],[ 44,10,-120],[ 30,-6,-120]], {opacity:.8, hot:0xF0A63C});
+
+  for (let i = 0; i < 26; i++){
+    hot(new THREE.BoxGeometry(1.2,1.2,1.2), 0x4FB3B8, .55)
+      .position.set((Math.random()-.5)*230, (Math.random()-.5)*140, (Math.random()-.5)*190);
+  }
+}
+
+/* ============================================================
+   03 — AR & 3D : recognised object, hotspots, brackets
+   ============================================================ */
+function s03(){
+  const core = new THREE.IcosahedronGeometry(21, 1);
+  const shell = wireMesh(core, {angle:1, opacity:.9, hot:0x4FB3B8});
+  G.userData.spin = [shell];
+
+  const hs = [];
+  [[18,10,11],[-16,-9,14],[7,19,-10]].forEach(function(p){
+    const r = hot(new THREE.RingGeometry(2.6, 3.2, 22), 0xF0A63C, .95);
+    r.position.set(p[0],p[1],p[2]); hs.push(r);
+  });
+  G.userData.hots = hs;
+
+  const B = 34, T = 9;
+  [[-1,1],[1,1],[-1,-1],[1,-1]].forEach(function(s){
+    poly([[s[0]*B - s[0]*T, s[1]*B, 26],[s[0]*B, s[1]*B, 26],[s[0]*B, s[1]*B - s[1]*T, 26]],
+         {opacity:.85, hot:0xF0A63C});
+  });
+
+  for (let i = 0; i < 6; i++){
+    const o = wireMesh(new THREE.OctahedronGeometry(5 + Math.random()*4, 0), {opacity:.45});
+    o.position.set((i%2?1:-1)*(70 + Math.random()*40), (Math.random()-.5)*90, -90 + i*32);
+  }
+}
+
+/* ============================================================
+   04 — QUALITY : caliper, gauge, machined blocks
+   ============================================================ */
+function s04(){
+  const beam = wireMesh(new THREE.BoxGeometry(104, 3, 5)); beam.position.set(0, 22, -10);
+  const j1 = wireMesh(new THREE.BoxGeometry(3, 22, 5)); j1.position.set(-30, 10, -10);
+  const j2 = wireMesh(new THREE.BoxGeometry(3, 22, 5)); j2.position.set( 26, 10, -10);
+  G.userData.jaws = [j1, j2];
+
+  for (let i = 0; i <= 18; i++){
+    const x = -46 + i*5.2, h = (i%4===0) ? 6 : 3;
+    poly([[x, 25, -10],[x, 25 + h, -10]], {opacity:.7, hot:0xF0A63C});
+  }
+
+  const dial = wireMesh(new THREE.TorusGeometry(12, .9, 6, 36), {fill:false, opacity:.8});
+  dial.position.set(62, 8, -46);
+  const needle = hot(new THREE.BoxGeometry(9, .8, .8), 0xF0A63C, 1);
+  needle.position.set(62, 8, -45);
+  G.userData.needle = needle;
+
+  for (let i = 0; i < 8; i++){
+    const b = wireMesh(new THREE.BoxGeometry(11, 11, 11));
+    b.position.set(-72 + i*21, -26, 30 + (Math.random()-.5)*60);
+    b.rotation.y = Math.random()*.7;
+  }
+}
+
+/* ============================================================
+   05 — NDT : the pipe, weld seams, the scan ring
+   ============================================================ */
+function s05(){
+  const pipe = wireMesh(new THREE.CylinderGeometry(17, 17, 340, 26, 1, true), {fill:false, opacity:.55});
+  pipe.rotation.x = Math.PI/2;
+
+  const inner = new THREE.Mesh(new THREE.CylinderGeometry(16.6, 16.6, 340, 26, 1, true), fill(.9));
+  inner.rotation.x = Math.PI/2; inner.material.side = THREE.BackSide; G.add(inner);
+
+  for (let i = -2; i <= 2; i++){
+    const s = wireMesh(new THREE.TorusGeometry(17.4, 1.1, 6, 28), {fill:false, opacity:.9, hot:0xF0A63C});
+    s.position.z = i*62;
+  }
+  for (let i = -3; i <= 3; i++){
+    const c = wireMesh(new THREE.BoxGeometry(5, 30, 26));
+    c.position.set(0, -30, i*50);
+  }
+
+  G.userData.ring = hot(new THREE.TorusGeometry(21, .4, 8, 56), 0xF0A63C, 1);
+  G.userData.halo = hot(new THREE.TorusGeometry(26, 2.8, 8, 42), 0xF0A63C, .14);
+
+  const arcs = [];
+  for (let i = 0; i < 3; i++){
+    const a = hot(new THREE.TorusGeometry(19 + i*4.5, .2, 6, 34, Math.PI*0.72), 0xF0A63C, .5 - i*.13);
+    a.rotation.z = -Math.PI*0.36; arcs.push(a);
+  }
+  G.userData.arcs = arcs;
+}
+
+/* ============================================================
+   06 — OIL & GAS : pipe network, valves, structure
+   ============================================================ */
+function s06(){
+  function run(a, b, r){
+    const A = new THREE.Vector3(a[0],a[1],a[2]), B = new THREE.Vector3(b[0],b[1],b[2]);
+    const m = wireMesh(new THREE.CylinderGeometry(r, r, A.distanceTo(B), 10, 1, true), {fill:false, opacity:.7});
+    m.position.copy(A).lerp(B, .5);
+    m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), B.clone().sub(A).normalize());
+  }
+  run([-110,-26,-60], [14,-26,-60], 5.4);
+  run([  14,-26,-60], [14, 28,-60], 5.4);
+  run([  14, 28,-60], [116,28,-60], 5.4);
+  run([ -80, 18, 44], [ 88, 18, 44], 4);
+  run([ -84,-40, 10], [ 96,-40, 10], 6.4);
+  run([  40,-40, 10], [ 40,  8, 10], 3.2);
+  run([ -50, 44,-10], [ -50,-10,-10], 3.2);
+
+  [[14,28,-60],[40,8,10],[-80,18,44],[-50,44,-10]].forEach(function(p){
+    const v = wireMesh(new THREE.TorusGeometry(6.6, 1.6, 6, 16), {fill:false, opacity:.95, hot:0xF0A63C});
+    v.position.set(p[0],p[1],p[2]); v.rotation.y = Math.PI/2;
+  });
+
+  for (let i = -1; i <= 1; i++){
+    const c1 = wireMesh(new THREE.BoxGeometry(4, 92, 4)); c1.position.set(-92, 8, i*74);
+    const c2 = wireMesh(new THREE.BoxGeometry(4, 92, 4)); c2.position.set( 100, 8, i*74);
+    const bm = wireMesh(new THREE.BoxGeometry(196, 4, 4)); bm.position.set(4, 54, i*74);
+  }
+  // flare tip
+  poly([[100,54,0],[100,86,0]], {opacity:.7});
+  hot(new THREE.SphereGeometry(3.4, 10, 10), 0xF0A63C, .9).position.set(100, 88, 0);
+}
+
+/* ============================================================
+   07 — DOCUMENTATION : sheet stack, data stream
+   ============================================================ */
+function s07(){
+  const sheets = [];
+  for (let i = 0; i < 13; i++){
+    const s = wireMesh(new THREE.BoxGeometry(46, .6, 62), {opacity: i === 12 ? .95 : .5, hot: i === 12 ? 0xF0A63C : undefined});
+    s.position.set(-26 + i*1.8, -30 + i*4.6, -10);
+    s.rotation.y = i*.05;
+    sheets.push(s);
+  }
+  G.userData.sheets = sheets;
+
+  for (let L = 0; L < 6; L++){
+    const len = 14 + Math.random()*22;
+    const ln = hot(new THREE.BoxGeometry(len, .4, 1.3), L === 5 ? 0xF0A63C : 0x4FB3B8, L === 5 ? .95 : .42);
+    ln.position.set(-26 + 12*1.8 - 16 + len/2, -30 + 12*4.6 + .8, -28 + L*8);
+    ln.rotation.y = 12*.05;
+  }
+
+  const bits = [];
+  for (let i = 0; i < 40; i++){
+    const b = hot(new THREE.BoxGeometry(1.7,1.7,1.7), 0x4FB3B8, .8);
+    b.position.set(62 + (Math.random()-.5)*70, (Math.random()-.5)*110, (Math.random()-.5)*130);
+    bits.push(b);
+  }
+  G.userData.bits = bits;
+
+  // archive shelving, receding
+  for (let i = 0; i < 5; i++){
+    const sh = wireMesh(new THREE.BoxGeometry(30, 46, 3), {opacity:.4});
+    sh.position.set(-96, 0, -80 + i*40);
+  }
+}
+
+/* ---------- build ---------- */
+[s01, s02, s03, s04, s05, s06, s07].forEach(function(fn, i){
+  G = new THREE.Group();
+  G.position.z = -i * GAP;
+  G.userData.glow = [];
+  G.userData.emissive = [];
+  fn();
+  scene.add(G);
+  groups.push(G);
+});
+
+/* ---------- horizon grids ---------- */
+const gridLo = new THREE.GridHelper(1800, 120, 0x1E3A44, 0x0E1C24);
+gridLo.position.y = -78; gridLo.position.z = -TOTAL/2;
+gridLo.material.transparent = true; gridLo.material.opacity = .3;
+scene.add(gridLo);
+const gridHi = gridLo.clone(); gridHi.position.y = 96; gridHi.material = gridLo.material.clone();
+gridHi.material.opacity = .12; scene.add(gridHi);
+
+/* ---------- particulate ---------- */
+const dg = new THREE.BufferGeometry(); const dp = [];
+for (let i = 0; i < 3200; i++) dp.push((Math.random()-.5)*420, (Math.random()-.5)*260, -Math.random()*(TOTAL + 400) + 160);
+dg.setAttribute('position', new THREE.Float32BufferAttribute(dp, 3));
+scene.add(new THREE.Points(dg, new THREE.PointsMaterial({color:0x5E7F94, size:.7, transparent:true, opacity:.5})));
+
+/* ============================================================
+   SCROLL + RENDER
+   ============================================================ */
+document.getElementById('spacer').style.height = (STAGES.length * 118) + 'vh';
+
+const panel = document.getElementById('panel');
+const rail  = document.getElementById('rail');
+STAGES.forEach(function(s, i){
+  const b = document.createElement('button');
+  b.className = 'tick' + (i === 0 ? ' on' : '');
+  b.innerHTML = '<span>' + s.no + '</span><span class="bar"></span>';
+  b.addEventListener('click', function(){
+    const max = document.body.scrollHeight - innerHeight;
+    scrollTo({top: (i/(STAGES.length-1))*max, behavior:'smooth'});
+  });
+  rail.appendChild(b);
+});
+const ticks = Array.prototype.slice.call(rail.children);
+
+let current = -1;
+function paint(i){
+  if (i === current) return;
+  current = i;
+  const s = STAGES[i];
+  panel.style.opacity = 0;
+  setTimeout(function(){
+    document.getElementById('sNo').textContent    = s.no;
+    document.getElementById('sKind').textContent  = s.kind;
+    document.getElementById('sTitle').textContent = s.title;
+    document.getElementById('sDesc').textContent  = s.desc;
+    document.getElementById('sRoles').innerHTML   = s.roles.map(function(r){
+      return '<div class="role"><em>' + r.p + '</em><div><b>' + r.t + '</b><br><s>' + r.s + '</s></div></div>'; }).join('');
+    document.getElementById('rPos').textContent    = 'STAGE ' + s.no + ' / 07';
+    document.getElementById('rPeriod').textContent = s.period;
+    document.getElementById('rLoc').textContent    = s.loc;
+    panel.style.opacity = 1;
+  }, 220);
+  ticks.forEach(function(t, n){ t.classList.toggle('on', n === i); });
+}
+paint(0);
+
+const mouse = {x:0,y:0,tx:0,ty:0};
+addEventListener('mousemove', function(e){
+  mouse.tx = (e.clientX/innerWidth)*2 - 1;
+  mouse.ty = (e.clientY/innerHeight)*2 - 1;
+});
+addEventListener('resize', function(){
+  renderer.setSize(innerWidth, innerHeight);
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+});
+
+const tmp = new THREE.Color();
+const clock = new THREE.Clock();
+let scrolled = 0;
+
+function loop(){
+  requestAnimationFrame(loop);
+  const t = clock.getElapsedTime();
+
+  const max = Math.max(1, document.body.scrollHeight - innerHeight);
+  scrolled += (Math.min(1, Math.max(0, scrollY/max)) - scrolled) * 0.07;
+
+  document.getElementById('prog').style.width = (scrolled*100) + '%';
+  document.getElementById('hint').style.opacity = scrolled > 0.02 ? 0 : 1;
+
+  const f = scrolled * (STAGES.length - 1);
+  paint(Math.min(STAGES.length-1, Math.max(0, Math.round(f))));
+
+  mouse.x += (mouse.tx - mouse.x)*.05;
+  mouse.y += (mouse.ty - mouse.y)*.05;
+
+  const camZ = 110 - scrolled * (TOTAL + 110);
+  camera.position.set(mouse.x*22, 4 - mouse.y*20, camZ);
+  camera.lookAt(mouse.x*8, -mouse.y*8, camZ - 140);
+  probe.position.set(0, 4, camZ - 50);
+
+  // proximity glow: wires warm to the stage accent as you close in
+  groups.forEach(function(g, i){
+    const d = Math.abs(camZ - g.position.z);
+    const vis = Math.max(0, Math.min(1, 1 - (d - 110)/170));
+    g.visible = vis > 0.012;
+    if (!g.visible) return;
+    const acc = STAGES[i].accent;
+    g.userData.glow.forEach(function(o){
+      tmp.setHex(o.hot !== undefined ? o.hot : acc);
+      o.line.material.color.copy(DIM).lerp(tmp, vis);
+      o.line.material.opacity = o.base * (0.22 + 0.78*vis);
+    });
+    g.userData.emissive.forEach(function(o){ o.m.opacity = o.base * vis; });
+  });
+
+  const g3 = groups[2];
+  if (g3.userData.spin) g3.userData.spin.forEach(function(o){ o.rotation.x = t*.13; o.rotation.y = t*.19; });
+  if (g3.userData.hots) g3.userData.hots.forEach(function(r, n){ r.lookAt(camera.position); r.scale.setScalar(1 + Math.sin(t*2.4+n)*.18); });
+
+  const g4 = groups[3];
+  if (g4.userData.jaws){
+    const o = Math.sin(t*.9)*4.5;
+    g4.userData.jaws[0].position.x = -30 - o;
+    g4.userData.jaws[1].position.x =  26 + o;
+  }
+  if (g4.userData.needle) g4.userData.needle.rotation.z = Math.sin(t*1.7)*.95;
+
+  const g5 = groups[4];
+  if (g5.userData.ring){
+    const local = camZ - g5.position.z - 58;
+    g5.userData.ring.position.z = local;
+    g5.userData.halo.position.z = local;
+    g5.userData.halo.scale.setScalar(1 + Math.sin(t*2.6)*.05);
+    g5.userData.arcs.forEach(function(a, n){
+      a.position.z = local + 7 + n*5.5;
+      a.material.opacity *= (0.5 + 0.5*Math.sin(t*3 - n*0.9));
+    });
+  }
+
+  const g7 = groups[6];
+  if (g7.userData.bits) g7.userData.bits.forEach(function(b, n){
+    b.position.y += Math.sin(t*1.3 + n)*0.05;
+    b.rotation.x = t*.4 + n; b.rotation.y = t*.3 + n;
+  });
+
+  renderer.render(scene, camera);
+}
+loop();
+</script>
+</body>
+</html>

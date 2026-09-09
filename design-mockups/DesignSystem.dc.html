@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+  <style>
+    body { margin: 0; background: #0A0E12; }
+    a { color: #F0A63C; text-decoration: none; }
+    a:hover { color: #FFC46B; }
+    * { box-sizing: border-box; }
+    .panel { border: 1px solid #1D2733; background: #0D1319; padding: 24px 26px 26px 26px; }
+    .ph { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #4FB3B8; margin-bottom: 18px; }
+    .sw { height: 74px; display: flex; align-items: flex-end; padding: 9px 10px; }
+    .swl { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; }
+    .meta { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; color: #4A5B6C; margin-top: 7px; }
+    .tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #9FB0C1; border: 1px solid #2A3846; padding: 5px 9px; }
+  </style>
+</helmet>
+
+<div style="width: 1240px; height: 980px; background: #0A0E12; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #E6ECF2; position: relative; overflow: hidden; padding: 48px 44px;">
+
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(79,179,184,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(79,179,184,0.045) 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+  <div style="position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid #1D2733; margin-bottom: 26px;">
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.26em; color: #F0A63C; margin-bottom: 12px;">DESIGN SYSTEM</div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 38px; line-height: 1.02; letter-spacing: -0.03em; margin: 0; color: #F3F7FA;">Steel, amber, and a scan line.</h2>
+    </div>
+    <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4A5B6C; margin-bottom: 4px;">MUTHUKUMAR PORTFOLIO · v1</span>
+  </div>
+
+  <!-- ROW 1 : palette + type -->
+  <div style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px;">
+
+    <div class="panel">
+      <div class="ph">PALETTE</div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; margin-bottom: 14px;">
+        <div><div class="sw" style="background:#0A0E12;border:1px solid #22303D;"><span class="swl" style="color:#7C8C9D;">#0A0E12</span></div><div class="meta">GROUND</div></div>
+        <div><div class="sw" style="background:#0D1319;border:1px solid #22303D;"><span class="swl" style="color:#7C8C9D;">#0D1319</span></div><div class="meta">SURFACE</div></div>
+        <div><div class="sw" style="background:#101822;border:1px solid #22303D;"><span class="swl" style="color:#7C8C9D;">#101822</span></div><div class="meta">RAISED</div></div>
+        <div><div class="sw" style="background:#1D2733;"><span class="swl" style="color:#8494A5;">#1D2733</span></div><div class="meta">HAIRLINE</div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px;">
+        <div><div class="sw" style="background:#F0A63C;"><span class="swl" style="color:#0A0E12;">#F0A63C</span></div><div class="meta" style="color:#F0A63C;">SCAN · PRIMARY</div></div>
+        <div><div class="sw" style="background:#4FB3B8;"><span class="swl" style="color:#06171A;">#4FB3B8</span></div><div class="meta" style="color:#4FB3B8;">DATA · SECONDARY</div></div>
+        <div><div class="sw" style="background:#F3F7FA;"><span class="swl" style="color:#0A0E12;">#F3F7FA</span></div><div class="meta">TEXT</div></div>
+        <div><div class="sw" style="background:#8494A5;"><span class="swl" style="color:#0A0E12;">#8494A5</span></div><div class="meta">MUTED</div></div>
+      </div>
+      <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed #22303D; font-size: 12.5px; line-height: 1.6; color: #7C8C9D;">Amber is the hot indication and appears once per view. Teal carries data, measurement and structure. Nothing else is coloured.</div>
+    </div>
+
+    <div class="panel">
+      <div class="ph">TYPOGRAPHY</div>
+      <div style="border-bottom: 1px solid #16202A; padding-bottom: 14px; margin-bottom: 14px;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:40px;letter-spacing:-0.035em;line-height:1;color:#F3F7FA;">MUTHUKUMAR</div>
+        <div class="meta">ARCHIVO 800 · DISPLAY · NAME &amp; SECTION HEADS</div>
+      </div>
+      <div style="border-bottom: 1px solid #16202A; padding-bottom: 14px; margin-bottom: 14px;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;color:#F3F7FA;">From the workbench to the weld.</div>
+        <div class="meta">ARCHIVO 700 · HEADLINES</div>
+      </div>
+      <div style="border-bottom: 1px solid #16202A; padding-bottom: 14px; margin-bottom: 14px;">
+        <div style="font-size:14.5px;line-height:1.66;color:#97A6B6;">Preparing, reviewing and maintaining NDT and inspection procedures within an ISO/IEC 17020 environment.</div>
+        <div class="meta">IBM PLEX SANS 300/400 · BODY · 14–16px</div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:#F0A63C;">SEAM 03 / 09 · SCANNING</div>
+        <div class="meta">IBM PLEX MONO · LABELS, READOUTS, DATES</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 2 : components + motifs -->
+  <div style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px;">
+
+    <div class="panel">
+      <div class="ph">COMPONENTS</div>
+      <div style="display: flex; gap: 10px; margin-bottom: 18px;">
+        <div style="display:flex;align-items:center;gap:9px;background:#F0A63C;color:#0A0E12;padding:13px 22px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:0.12em;">PRIMARY
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div style="display:flex;align-items:center;padding:13px 22px;border:1px solid #2A3846;color:#C3CEDA;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;">GHOST</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:#0A0E12;background:#F0A63C;padding:5px 10px;">CERTIFIED</span>
+        <span class="tag">SUPPORTED</span>
+        <span style="font-size:12.5px;color:#9FB0C1;border:1px solid #22303D;padding:5px 9px;">Skill chip</span>
+        <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:#F0A63C;border:1px dashed #7A5A25;padding:4px 8px;">[ CONTENT NEEDED ]</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px dashed #22303D;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.24em;color:#F0A63C;">04</span>
+        <span style="width:24px;height:1px;background:#2A3846;"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.24em;color:#5F7183;">SECTION HEADER PATTERN</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="ph">MOTIFS</div>
+      <svg viewBox="0 0 540 210" style="display:block;width:100%;">
+        <rect width="540" height="210" fill="#0B1116"/>
+        <g stroke="#4FB3B8" stroke-width="1" opacity="0.13"><path d="M0 40 H540 M0 80 H540 M0 120 H540 M0 160 H540 M60 0 V210 M120 0 V210 M180 0 V210 M240 0 V210 M300 0 V210 M360 0 V210 M420 0 V210 M480 0 V210"/></g>
+
+        <g stroke="#2A3846" stroke-width="1"><path d="M12 12 h22 M12 12 v22"/><path d="M528 12 h-22 M528 12 v22"/><path d="M12 198 h22 M12 198 v-22"/><path d="M528 198 h-22 M528 198 v-22"/></g>
+        <text x="46" y="26" fill="#4A5B6C" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="1.4">REGISTRATION TICKS</text>
+
+        <path d="M46 70 H320" stroke="#F0A63C" stroke-width="2"/>
+        <path d="M46 70 H320" stroke="#F0A63C" stroke-width="7" opacity="0.15"/>
+        <text x="336" y="74" fill="#4A5B6C" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="1.4">SCAN LINE</text>
+
+        <g>
+          <rect x="46" y="104" width="274" height="16" fill="#2C3947"/>
+          <path d="M170 104 q6 8 0 16" stroke="#141C25" stroke-width="6" fill="none"/>
+          <path d="M170 104 q6 8 0 16" stroke="#3E4E5E" stroke-width="2" fill="none"/>
+          <text x="336" y="116" fill="#4A5B6C" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="1.4">WELD SEAM DIVIDER</text>
+        </g>
+
+        <g>
+          <rect x="46" y="150" width="274" height="42" fill="#0C1218" stroke="#22303D"/>
+          <g fill="#1B2531"><rect x="54" y="154" width="12" height="7" rx="1.6"/><rect x="82" y="154" width="12" height="7" rx="1.6"/><rect x="110" y="154" width="12" height="7" rx="1.6"/><rect x="138" y="154" width="12" height="7" rx="1.6"/><rect x="166" y="154" width="12" height="7" rx="1.6"/><rect x="194" y="154" width="12" height="7" rx="1.6"/><rect x="222" y="154" width="12" height="7" rx="1.6"/><rect x="250" y="154" width="12" height="7" rx="1.6"/><rect x="278" y="154" width="12" height="7" rx="1.6"/>
+            <rect x="54" y="181" width="12" height="7" rx="1.6"/><rect x="82" y="181" width="12" height="7" rx="1.6"/><rect x="110" y="181" width="12" height="7" rx="1.6"/><rect x="138" y="181" width="12" height="7" rx="1.6"/><rect x="166" y="181" width="12" height="7" rx="1.6"/><rect x="194" y="181" width="12" height="7" rx="1.6"/><rect x="222" y="181" width="12" height="7" rx="1.6"/><rect x="250" y="181" width="12" height="7" rx="1.6"/><rect x="278" y="181" width="12" height="7" rx="1.6"/></g>
+          <rect x="60" y="164" width="248" height="14" fill="#101A22" stroke="#2C3E4A" opacity="0"/>
+          <text x="336" y="176" fill="#4A5B6C" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="1.4">RADIOGRAPHIC FILM STRIP</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ROW 3 : rules -->
+  <div class="panel" style="position: relative;">
+    <div class="ph">RULES THIS DESIGN HOLDS TO</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 22px;">
+      <div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:14.5px;color:#F3F7FA;margin-bottom:7px;">No percentage bars</div>
+        <div style="font-size:12.5px;line-height:1.6;color:#7C8C9D;">Capability is grouped by domain and evidenced by roles and certificates. Fourteen bars reading 100 percent said nothing.</div>
+      </div>
+      <div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:14.5px;color:#F3F7FA;margin-bottom:7px;">Certified is not supported</div>
+        <div style="font-size:12.5px;line-height:1.6;color:#7C8C9D;">Six ASNT methods carry a solid amber badge. The five supported in the current role carry a plain outline. Never mixed.</div>
+      </div>
+      <div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:14.5px;color:#F3F7FA;margin-bottom:7px;">Gaps stay visible</div>
+        <div style="font-size:12.5px;line-height:1.6;color:#7C8C9D;">Missing facts render as a dashed amber marker, never as invented text. Nothing ships until every marker is filled or cut.</div>
+      </div>
+      <div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:14.5px;color:#F3F7FA;margin-bottom:7px;">Every object earns its place</div>
+        <div style="font-size:12.5px;line-height:1.6;color:#7C8C9D;">Pipe, scan ring, weld seam, film strip, gauge. No geometry exists that does not come from the trade.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

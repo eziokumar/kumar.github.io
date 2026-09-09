@@ -1,0 +1,46 @@
+{
+  "note": "No proficiency percentages. Capability is grouped by domain and evidenced by the roles and certifications that back it.",
+  "bridge": ["CODE", "DATA", "QUALITY", "INSPECTION", "DOCUMENTATION", "DIGITALIZATION"],
+  "bridgeText": "A technology background is not a detour from industrial inspection. Inspection runs on records, and records are data. Knowing how software, databases and reporting work is what makes procedures traceable and inspection information usable.",
+  "groups": [
+    {
+      "id": "technology",
+      "no": "01",
+      "title": "Technology",
+      "meta": "2016 — 2021 · Malaysia",
+      "icon": "chip",
+      "items": ["IT Support", "Hardware and software troubleshooting", "Web Development", "Front-End Development", "HTML", "CSS", "SASS", "JavaScript", "jQuery", "PHP", "MySQL", "Shopify", "VB / WPF", "Raspberry Pi", "RFID"]
+    },
+    {
+      "id": "quality",
+      "no": "02",
+      "title": "Quality",
+      "meta": "TVS Sundram Fasteners · Miracle Cable",
+      "icon": "shield",
+      "items": ["Quality Control", "Quality Assurance", "Inspection", "In-process Inspection", "Final Inspection", "Root Cause Analysis", "Data Analysis", "Reporting", "Team Leadership"],
+      "footer": {
+        "label": "INSTRUMENTS",
+        "text": "Contour Machine · 2D Micro Height Gauge · Air Gauges"
+      }
+    },
+    {
+      "id": "ndt",
+      "no": "03",
+      "title": "NDT",
+      "meta": "ASNT Level II certified",
+      "icon": "wave",
+      "accent": true,
+      "certified": ["VT", "PT", "MT", "UT", "RT", "RTFI"],
+      "supportedLabel": "ALSO SUPPORTED IN CURRENT ROLE",
+      "supported": ["PAUT", "PWHT", "HT", "PMI", "FT"]
+    },
+    {
+      "id": "documentation",
+      "no": "04",
+      "title": "Documentation",
+      "meta": "Current focus · Abu Dhabi",
+      "icon": "doc",
+      "items": ["NDT Procedures", "SOPs", "Work Instructions", "Technical Documentation", "Document Control", "Revision Control", "Certification Records", "Technician Records", "Inspection Reports", "Project Documentation", "Traceability", "Digitalization"]
+    }
+  ]
+}

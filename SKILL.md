@@ -1,5 +1,5 @@
 ---
-name: kumar
+name: Muthukumar
 description: A brief description of what this skill does
 ---
 

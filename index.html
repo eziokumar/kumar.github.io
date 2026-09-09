@@ -1,329 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Muthukumar — Portfolio</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="keywords" content="Muthukumar, front-end developer, web developer, portfolio">
-  <meta name="description" content="Muthukumar — Front-End Developer &amp; NDT Inspector. Portfolio of web development and inspection engineering work.">
-  <meta name="theme-color" content="#0a121e">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muthukumar — Technical Assistant | NDT Level II | QA/QC | Technical Documentation</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Muthukumar — Technical Assistant and ASNT NDT Level II technician in Abu Dhabi. NDT inspection, QA/QC, technical documentation and document control, with a background in web development.">
+<meta name="keywords" content="NDT Level II, NDT Technician, Technical Assistant, QA/QC, Quality Assurance, Quality Control, Inspection, NDT Inspection, Technical Documentation, Document Control, Ultrasonic Testing, Magnetic Particle Testing, Liquid Penetrant Testing, Radiographic Testing, PAUT, Industrial Inspection, Abu Dhabi">
+<meta name="author" content="Muthukumar">
+<meta name="theme-color" content="#04070A">
+<link rel="canonical" href="https://eziokumar.github.io/">
 
-  <link href="css/main.css" rel="stylesheet">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Muthukumar — Technical Assistant | NDT Level II | QA/QC">
+<meta property="og:description" content="A multidisciplinary technical professional combining NDT inspection, QA/QC, technical documentation and industrial project support with a foundation in IT and web development.">
+<meta property="og:url" content="https://eziokumar.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muthukumar",
+  "jobTitle": "Technical Assistant",
+  "worksFor": { "@type": "Organization", "name": "Alfa Technical Service" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE" },
+  "email": "mailto:ramukmuthu7@gmail.com",
+  "url": "https://eziokumar.github.io/",
+  "sameAs": ["https://www.linkedin.com/in/3zio", "https://github.com/eziokumar"],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification",
+      "name": "ASNT NDT Level II",
+      "recognizedBy": { "@type": "Organization", "name": "American Society for Nondestructive Testing" } }
+  ],
+  "knowsAbout": ["Non-Destructive Testing", "Ultrasonic Testing", "Magnetic Particle Testing", "Liquid Penetrant Testing", "Radiographic Testing", "Quality Control", "Quality Assurance", "Technical Documentation", "Document Control", "Industrial Inspection"]
+}
+</script>
 </head>
 
 <body>
-  <div class="grid-canvas"></div>
 
-  <header id="header">
-    <div class="nav-bar">
-      <a href="#intro" class="brand"><span class="dot"></span>MUTHUKUMAR</a>
+<canvas id="world" aria-hidden="true"></canvas>
+<div id="world-grid" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#intro" data-i="1" class="active">Home</a></li>
-          <li><a href="#about" data-i="2">About</a></li>
-          <li><a href="#experience" data-i="3">Experience</a></li>
-          <li><a href="#education" data-i="4">Education</a></li>
-          <li><a href="#skills" data-i="5">Skills</a></li>
-          <li><a href="#projects" data-i="6">Projects</a></li>
-          <li><a href="#footer" data-i="7">Contact</a></li>
-        </ul>
-      </nav>
+<header class="nav" id="nav">
+  <a href="#hero" class="brand">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0A63C" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg>
+    MUTHUKUMAR
+  </a>
 
-      <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle light / dark">
-          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 3a6.5 6.5 0 1 0 9 9 9 9 0 1 1-9-9Z"/>
-          </svg>
-        </button>
-        <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 6h18M3 12h18M3 18h18"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
+  <nav aria-label="Sections">
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#career">Journey</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#ndt">NDT</a></li>
+      <li><a href="#industrial">Projects</a></li>
+      <li><a href="#system">System</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#resume">Contact</a></li>
+    </ul>
+  </nav>
 
-  <main id="main">
+  <div class="nav-right">
+    <span class="nav-loc" id="navLoc"></span>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
 
-    <!-- ============ HERO ============ -->
-    <section id="intro">
-      <div class="hero-photo"><img src="images/intro-carousel/4.jpg" alt=""></div>
-      <div class="container hero-inner">
-        <span class="hero-kicker">Front-End Developer · NDT Inspector</span>
-        <h1 class="hero-name">Muthukumar</h1>
-        <p class="hero-role">&gt; <span id="typedRole"></span><span class="cursor">▌</span></p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#footer" class="btn btn-ghost">Get in Touch</a>
-        </div>
-      </div>
-      <div class="scroll-cue"><span class="line"></span> SCROLL</div>
-    </section>
+<main id="main">
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about">
-      <div class="container">
-        <header class="section-header reveal"><span class="idx">02</span><h3>Profile</h3></header>
-        <p class="about-lead reveal">
-          <strong>2.5 years</strong> of front-end development experience, spanning
-          <strong>Shopify storefronts</strong> at LA Studios and full-stack web work at SearchNEasy —
-          building interfaces from design mock-ups into seamless, cross-device experiences.
-          Before that: hands-on <strong>industrial inspection</strong> as an ASNT NDT Level II
-          technician, and IT support/hardware troubleshooting. Same instinct either way —
-          find the defect, fix the root cause, document it clearly.
-        </p>
-        <div class="stat-row reveal-stagger">
-          <div class="stat-card"><div class="num">2.5+</div><div class="label">Years — Front-End Dev</div></div>
-          <div class="stat-card"><div class="num">5</div><div class="label">Roles Held</div></div>
-          <div class="stat-card"><div class="num">II</div><div class="label">ASNT NDT Level</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ EXPERIENCE ============ -->
-    <section id="experience">
-      <div class="container">
-        <header class="section-header reveal"><span class="idx">03</span><h3>Work Experience</h3></header>
-
-        <div class="timeline">
-          <div class="timeline-track" id="expTrack"></div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">Jul 2022 — Present</span>
-            <h4>ASNT NDT Level II</h4>
-            <span class="item-small">IQ NDT Engineers</span>
-            <div class="item-description">
-              <p>Performing non-destructive testing — ultrasonic (UT), magnetic particle (MT), liquid penetrant (PT) and visual (VT) — to detect defects and anomalies in materials and components.</p>
-              <ul>
-                <li>Interpreting codes and standards</li>
-                <li>Calibration and equipment maintenance</li>
-                <li>Data analysis and reporting</li>
-                <li>Client communication, training and mentoring</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">Sep 2019 — Mar 2021</span>
-            <h4>Front-End Web Developer</h4>
-            <span class="item-small">LA Studios — Shopify Expert</span>
-            <div class="item-description">
-              <p>Implemented user interfaces and interactive features from design mock-ups, ensuring a seamless experience across devices and browsers.</p>
-              <ul>
-                <li>Resolved critical bugs and issues</li>
-                <li>Version control and team collaboration</li>
-                <li>Technical support</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">Aug 2018 — Aug 2019</span>
-            <h4>Junior Web Programmer</h4>
-            <span class="item-small">SearchnEasy.com</span>
-            <div class="item-description">
-              <p>Collaborated with senior developers and designers to build dynamic, responsive websites using HTML, CSS, JavaScript and related technologies.</p>
-              <ul>
-                <li>Contributed to successful website launches</li>
-                <li>Improved website performance</li>
-                <li>Implemented scalable solutions</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">Mar 2018 — Jul 2018</span>
-            <h4>IT Support (Internship)</h4>
-            <span class="item-small">Mecacom Technologies Sdn Bhd</span>
-            <div class="item-description">
-              <p>Installed, updated and configured software, OS and drivers across user devices, and managed backup solutions to protect against data loss.</p>
-              <ul>
-                <li>Hardware maintenance and troubleshooting</li>
-                <li>Data backup and recovery</li>
-                <li>Network support</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">Mar 2016 — Feb 2018</span>
-            <h4>Computer Technician</h4>
-            <span class="item-small">B Online Cybercafe</span>
-            <div class="item-description">
-              <p>Provided technical assistance for hardware/software issues and managed user accounts and permissions to maintain system integrity.</p>
-              <ul>
-                <li>Improved network stability</li>
-                <li>Enhanced security measures</li>
-                <li>Streamlined system upgrades</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ EDUCATION ============ -->
-    <section id="education">
-      <div class="container">
-        <header class="section-header reveal"><span class="idx">04</span><h3>Education</h3></header>
-
-        <div class="timeline">
-          <div class="timeline-track" id="eduTrack"></div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">May 2022 — Jun 2023</span>
-            <h4>Diploma in NDT, Piping &amp; Pressure Vessel Technology</h4>
-            <span class="item-small">Nille Technical Skills Pvt Ltd</span>
-            <div class="item-description">
-              <ul>
-                <li>Design principles, material selection, fabrication techniques and safety considerations</li>
-                <li>Industry codes and standards (ASME, ASTM, API) — pipe routing, support systems, welding procedures</li>
-                <li>QC documentation and maintenance of inspection/test records</li>
-                <li>GD&amp;T · ISO 9001 internal auditor training</li>
-                <li>NDT / ASNT Level II techniques — UT, MPT, DPT, RT</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="t-item">
-            <span class="dot"></span>
-            <span class="item-period">Sep 2015 — Oct 2018</span>
-            <h4>Diploma in Information Technology</h4>
-            <span class="item-small">QUEST International University · CGPA 2.82</span>
-            <div class="item-description">
-              <ul>
-                <li>Programming: C++, HTML, CSS, JavaScript, React, Angular</li>
-                <li>Systems analysis &amp; design, project management</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SKILLS ============ -->
-    <section id="skills">
-      <div class="container">
-        <header class="section-header reveal"><span class="idx">05</span><h3>Skills</h3></header>
-
-        <div class="skills-groups">
-          <div class="skill-group reveal">
-            <h4>Development</h4>
-            <div class="gauge-grid">
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>HTML5 / CSS3</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>PHP</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>MySQL</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>Web Development</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>C / C++</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>VB.NET</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>Bootstrap</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-            </div>
-          </div>
-
-          <div class="skill-group reveal">
-            <h4>Tools</h4>
-            <div class="gauge-grid">
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Microsoft Word</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>XAMPP</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="95"><div class="gauge-top"><span>Microsoft PowerPoint</span><span class="val">95%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>Adobe Photoshop</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>GitHub</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="90"><div class="gauge-top"><span>Visual Studio</span><span class="val">90%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="80"><div class="gauge-top"><span>Microsoft Excel</span><span class="val">80%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-            </div>
-          </div>
-
-          <div class="skill-group reveal">
-            <h4>Soft &amp; Hard Skills</h4>
-            <div class="gauge-grid">
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Technical Support</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Troubleshooting</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Data Analysis &amp; Reporting</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Team Collaboration</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Root Cause Analysis</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Client Communication</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-              <div class="gauge" data-value="100"><div class="gauge-top"><span>Training &amp; Mentoring</span><span class="val">100%</span></div><div class="gauge-bar"><div class="gauge-fill"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROJECTS ============ -->
-    <section id="projects">
-      <div class="container">
-        <header class="section-header reveal"><span class="idx">06</span><h3>Projects</h3></header>
-
-        <div id="projectsContainer" class="projects-loading">
-          <p class="projects-status">Loading projects…</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <section id="footer">
+  <!-- ============================ HERO ============================ -->
+  <section id="hero">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-cta reveal">
-          <h3>Let's build something.</h3>
-          <p>Open to front-end roles and freelance work. Based in Chennai, India — happy to work remote.</p>
-          <button class="copy-email" id="copyEmail" data-email="ramukmuthu7@gmail.com">
-            ramukmuthu7@gmail.com
-            <span class="status">copied ✓</span>
-          </button>
-        </div>
-
-        <div class="socials reveal">
-          <a href="https://github.com/eziokumar" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener">
-            <img class="off" src="images/gh.png" alt=""><img class="on" src="images/gh1.png" alt="">
-          </a>
-          <a href="https://www.linkedin.com/in/3zio" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <img class="off" src="images/in.png" alt=""><img class="on" src="images/in1.png" alt="">
-          </a>
-          <a href="https://wa.me/qr/WGCDOQZYQWXZE1" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
-            <img class="off" src="images/ws.png" alt=""><img class="on" src="images/ws1.png" alt="">
-          </a>
-          <a href="https://steamcommunity.com/id/x3ziox/" class="social-btn" aria-label="Steam" target="_blank" rel="noopener">
-            <img class="off" src="images/steam.png" alt=""><img class="on" src="images/steam1.png" alt="">
-          </a>
-          <a href="mailto:ramukmuthu7@gmail.com" class="social-btn" aria-label="Email">
-            <img class="off" src="images/mail.png" alt=""><img class="on" src="images/mail1.png" alt="">
-          </a>
-        </div>
+      <div class="hero-kicker">
+        <i></i><b id="heroTitle"></b><span id="heroEmployer"></span>
       </div>
-
-      <div class="footer-bottom">
-        <span>&copy; <span id="year"></span> Muthukumar. All rights reserved.</span>
-        <span>Built with vanilla JS — no framework required.</span>
+      <h1 class="hero-name">MUTHU<br>KUMAR</h1>
+      <div class="hero-chips" id="heroChips"></div>
+      <p class="hero-lead" id="heroLead"></p>
+      <div class="hero-cta">
+        <a href="#career" class="btn btn-primary">
+          EXPLORE MY JOURNEY
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#industrial" class="btn btn-ghost">VIEW PROJECTS</a>
       </div>
     </div>
   </section>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
+  <!-- ============================ CAREER ============================ -->
+  <section id="career">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>02</b><i></i><span>Career evolution</span></div>
+          <h2 class="sec">From the workbench<br>to the weld.</h2>
+        </div>
+        <p class="sec-note">The environment transforms as you travel. Seven worlds, from a repair bench in Malaysia to inspection documentation on ADNOC, INEOS and Petrofac projects in Abu Dhabi.</p>
+      </div>
 
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-    <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous">‹</button>
-    <img id="lightboxImg" src="" alt="">
-    <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next">›</button>
+      <div class="rail-label reveal"><span>The world you travel through</span><i></i></div>
+      <div class="stage-rail" id="stageRail"></div>
+
+      <div class="rail-label reveal">
+        <span>The roles, in order</span><i></i>
+        <em>08 positions · Malaysia → India → UAE</em>
+      </div>
+      <div class="track" aria-hidden="true"></div>
+      <div class="roles" id="rolesTrack"></div>
+
+      <div class="role-detail reveal" id="roleDetail"></div>
+    </div>
+  </section>
+
+  <!-- ============================ EXPERTISE ============================ -->
+  <section id="expertise">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>03</b><i></i><span>Professional expertise</span></div>
+          <h2 class="sec">Four disciplines, one method.</h2>
+        </div>
+        <p class="sec-note" id="expNote"></p>
+      </div>
+      <div class="exp-grid" id="expGrid"></div>
+      <div class="panel bridge reveal" id="bridge"></div>
+    </div>
+  </section>
+
+  <!-- ============================ NDT ============================ -->
+  <section id="ndt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>04</b><i></i><span>NDT &amp; inspection methods</span></div>
+          <h2 class="sec">Ten ways to see<br>inside a weld.</h2>
+        </div>
+        <div class="legend">
+          <div><span class="cert-badge l2">ASNT LEVEL II</span><span>Certified to perform</span></div>
+          <div><span class="cert-badge sup">SUPPORTED</span><span>Documented in current role</span></div>
+        </div>
+      </div>
+      <div class="ndt-grid" id="ndtGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================ INDUSTRIAL ============================ -->
+  <section id="industrial">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>05</b><i></i><span>Industrial projects</span></div>
+          <h2 class="sec">Six projects,<br>documented.</h2>
+        </div>
+        <div>
+          <p class="sec-note" style="margin-bottom:12px">Oil and gas projects supported from Abu Dhabi through inspection documentation, procedures and technician records.</p>
+          <div class="notice">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#657888" stroke-width="1.8" style="flex-shrink:0;margin-top:2px" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10.5" rx="1.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+            <span id="industrialNotice"></span>
+          </div>
+        </div>
+      </div>
+      <div class="proj-featured" id="projFeatured"></div>
+      <div class="proj-grid" id="projGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================ NDT MANAGEMENT SYSTEM ============================ -->
+  <section id="system">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>06</b><i></i><span>NDT management system</span></div>
+          <h2 class="sec">Where the two<br>halves finally meet.</h2>
+        </div>
+        <p class="sec-note" id="systemIntro"></p>
+      </div>
+      <div class="gap-note reveal" id="systemGap"></div>
+      <div class="mod-grid" id="modGrid" style="margin-top:26px"></div>
+      <div class="panel lifecycle reveal" id="lifecycle"></div>
+    </div>
+  </section>
+
+  <!-- ============================ TECHNOLOGY PROJECTS ============================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>07</b><i></i><span>Technology projects</span></div>
+          <h2 class="sec">Hardware, cloud,<br>and thirteen storefronts.</h2>
+        </div>
+        <p class="sec-note">Built between 2018 and 2021 in Malaysia, before the move into inspection. The engineering instinct was already there.</p>
+      </div>
+      <div class="panel panel-amber feature reveal" id="smartCart"></div>
+      <div class="site-cols" id="siteCols"></div>
+    </div>
+  </section>
+
+  <!-- ============================ AR ============================ -->
+  <section id="ar">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>08</b><i></i><span>Augmented reality</span></div>
+          <h2 class="sec">The idea that<br>predicted the career.</h2>
+        </div>
+        <p class="sec-note">A university AR application for exploring laboratory projects, whose long-term vision was exactly the thing he ended up doing for a living: guiding technical work without an instructor standing there.</p>
+      </div>
+      <div id="arBlock"></div>
+    </div>
+  </section>
+
+  <!-- ============================ CERTIFICATIONS ============================ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><b>09</b><i></i><span>Certifications &amp; training</span></div>
+          <h2 class="sec">Six methods,<br>on the record.</h2>
+        </div>
+        <div class="gap-note" id="certGap"></div>
+      </div>
+      <div class="rail-label reveal">
+        <span id="asntLabel"></span><i></i><em id="asntIssuer"></em>
+      </div>
+      <div id="filmStrip"></div>
+      <div class="cert-groups" id="certGroups"></div>
+    </div>
+  </section>
+
+  <!-- ============================ RESUME + CONTACT ============================ -->
+  <section id="resume">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow"><b>10 / 11</b><i></i><span>Resume &amp; contact</span></div>
+      </div>
+      <div class="rc">
+        <div class="rc-left reveal">
+          <h2>The whole record,<br>on one page.</h2>
+          <p>Eight roles across three countries, six ASNT Level II methods, and ten years of moving from computer hardware into weld integrity and inspection documentation.</p>
+          <div class="rc-actions" id="rcActions"></div>
+          <ul class="facts" id="facts"></ul>
+        </div>
+        <div class="rc-right reveal">
+          <div class="rc-top">
+            <div class="photo-slot" id="photoSlot">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3A4A5B" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5"/></svg>
+              <span>[ PHOTO ]</span>
+            </div>
+            <div class="panel open-to">
+              <div class="k">OPEN TO</div>
+              <p id="openTo"></p>
+            </div>
+          </div>
+          <div class="links" id="links"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="l">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0A63C" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg>
+    <span id="footLeft"></span>
   </div>
+  <em id="footRight"></em>
+</footer>
 
-  <script src="js/main.js"></script>
+<div class="readout" id="readout" aria-hidden="true">
+  <div class="cell"><span class="num amber" id="ro0v"></span><span class="lbl" id="ro0l"></span></div>
+  <div class="cell"><span class="num" id="ro1v"></span><span class="lbl" id="ro1l"></span></div>
+  <div class="cell"><span class="num" id="ro2v"></span><span class="lbl" id="ro2l"></span></div>
+  <div class="cell"><span class="num" id="ro3v"></span><span class="lbl" id="ro3l"></span></div>
+  <div class="cell"><span class="pulse"></span><span class="lbl" id="roStage">SCAN ACTIVE</span></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="js/icons.js" defer></script>
+<script src="js/world.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

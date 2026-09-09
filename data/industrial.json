@@ -1,0 +1,51 @@
+{
+  "disclaimer": "Project involvement is inspection documentation and technical support. No client-confidential information, inspection results or internal documents are shown.",
+  "projects": [
+    {
+      "no": "01",
+      "name": "INEOS Project One",
+      "scope": "Film Digitalization",
+      "featured": true,
+      "desc": "Digitalization of radiographic film into controlled digital records, with document control across the project set.",
+      "tags": ["Document control", "Carestream Industrex 7.2v"],
+      "diagram": "film"
+    },
+    {
+      "no": "02",
+      "name": "ADNOC GAS EPC — MERAM",
+      "scope": "Gas EPC",
+      "featured": true,
+      "desc": "Maximizing Ethane Recovery and Monetization. Inspection documentation and technician records support.",
+      "tags": ["Procedures", "Technician records"],
+      "diagram": "pipeline"
+    },
+    {
+      "no": "03",
+      "name": "Petrofac",
+      "scope": "Das Island P5",
+      "tags": ["Inspection support"],
+      "icon": "plant"
+    },
+    {
+      "no": "04",
+      "name": "Lower Zakum",
+      "scope": "Oil & Gas Project",
+      "tags": ["Inspection support"],
+      "icon": "bars"
+    },
+    {
+      "no": "05",
+      "name": "Asab & Sahil",
+      "scope": "Tie-in & Flowline Projects",
+      "tags": ["Inspection support"],
+      "icon": "flow"
+    },
+    {
+      "no": "06",
+      "name": "Buhasa",
+      "scope": "Project",
+      "tags": ["Inspection support"],
+      "icon": "valve"
+    }
+  ]
+}

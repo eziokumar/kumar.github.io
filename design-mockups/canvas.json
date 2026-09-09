@@ -1,0 +1,50 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Desktop sections" },
+    { "id": "page-2", "name": "Mobile & system" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html",          "page": "page-1", "x": 0,    "y": 0,    "w": 1440, "h": 900,  "title": "01 · Hero" },
+    { "file": "Expertise.dc.html",     "page": "page-1", "x": 0,    "y": 1020, "w": 1440, "h": 900,  "title": "03 · Professional expertise" },
+    { "file": "Industrial.dc.html",    "page": "page-1", "x": 0,    "y": 2040, "w": 1440, "h": 940,  "title": "05 · Industrial projects" },
+    { "file": "TechProjects.dc.html",  "page": "page-1", "x": 0,    "y": 3100, "w": 1440, "h": 960,  "title": "07 · Technology projects" },
+    { "file": "Certifications.dc.html","page": "page-1", "x": 0,    "y": 4180, "w": 1440, "h": 920,  "title": "10 · Certifications" },
+
+    { "file": "Career.dc.html",        "page": "page-1", "x": 1560, "y": 0,    "w": 1440, "h": 1160, "title": "02 · Career evolution — signature" },
+    { "file": "NDT.dc.html",           "page": "page-1", "x": 1560, "y": 1280, "w": 1440, "h": 960,  "title": "04 · NDT & inspection methods" },
+    { "file": "NDTSystem.dc.html",     "page": "page-1", "x": 1560, "y": 2360, "w": 1440, "h": 940,  "title": "06 · NDT management system" },
+    { "file": "AR.dc.html",            "page": "page-1", "x": 1560, "y": 3420, "w": 1440, "h": 980,  "title": "08 · Augmented reality" },
+    { "file": "ResumeContact.dc.html", "page": "page-1", "x": 1560, "y": 4520, "w": 1440, "h": 900,  "title": "11 · Resume & contact" },
+
+    { "file": "MobileHero.dc.html",    "page": "page-2", "x": 0,    "y": 0,    "w": 390,  "h": 844,  "title": "Mobile · Hero" },
+    { "file": "MobileCareer.dc.html",  "page": "page-2", "x": 510,  "y": 0,    "w": 390,  "h": 844,  "title": "Mobile · Career" },
+    { "file": "DesignSystem.dc.html",  "page": "page-2", "x": 1020, "y": 0,    "w": 1240, "h": 980,  "title": "Design system" }
+  ],
+  "annotations": [
+    {
+      "id": "open-items",
+      "page": "page-1",
+      "x": 0,
+      "y": -220,
+      "w": 620,
+      "text": "STILL NEEDED BEFORE THIS CAN SHIP\n\n1. B Online Cybercafe dates. Existing site says Mar 2016 - Feb 2018.\n2. NDT diploma from Nille Technical Skills - keep it or drop it?\n3. NDT Management System - project summary and what may be shown publicly.\n4. Certificate numbers, issue and expiry dates, scanned certificates.\n5. Professional photograph.\n6. Resume PDF for the download button.\n\nEvery one of these appears on an artboard as a dashed amber marker."
+    },
+    {
+      "id": "left-column",
+      "page": "page-1",
+      "x": 660,
+      "y": -220,
+      "w": 480,
+      "text": "READ DOWN THE LEFT COLUMN FIRST\n\nLeft: hero, expertise, industrial projects, technology projects, certifications.\n\nRight: career evolution, NDT methods, the management system, AR, resume and contact.\n\nSection numbers on each artboard match the running order of the real page."
+    },
+    {
+      "id": "sig",
+      "page": "page-1",
+      "x": 1560,
+      "y": -220,
+      "w": 520,
+      "text": "THE SIGNATURE SECTION\n\nSeven environment stages across the top show the world morphing as you scroll. Eight roles run underneath on the chronological track.\n\nAR and 3D is a stage in the world but not a row on the timeline, because it was a project era rather than a job. Forcing it into the job list would misstate the history."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

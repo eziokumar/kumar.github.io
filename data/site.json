@@ -1,0 +1,41 @@
+{
+  "name": "Muthukumar",
+  "headline": "Technical Assistant | NDT Level II | QA/QC | Technical Documentation | Industrial Inspection",
+  "title": "Technical Assistant",
+  "employer": "Alfa Technical Service",
+  "location": "Abu Dhabi, United Arab Emirates",
+  "chips": ["NDT Level II", "QA / QC", "Technical Documentation", "Web Technology"],
+  "oneLine": "A multidisciplinary technical professional combining NDT inspection, QA/QC, technical documentation and industrial project support with a strong foundation in IT, web development and digital technology.",
+  "intro": [
+    "I am a multidisciplinary technical professional with experience spanning IT support, web development, quality control, NDT inspection, QA/QC and technical documentation. My career has evolved from technology and software development into industrial inspection and technical operations, giving me a combination of digital and engineering-oriented skills.",
+    "I currently work as a Technical Assistant in Abu Dhabi, supporting NDT and inspection activities, technical documentation, procedure preparation and revision, technician certification and competency records, equipment and calibration documentation, project coordination and document control within an ISO/IEC 17020-based inspection environment.",
+    "Before moving into NDT and industrial inspection, I worked in IT support, PHP and web programming, front-end development and Shopify development, and built projects involving Raspberry Pi, RFID, cloud synchronisation, POS systems and augmented reality."
+  ],
+  "philosophy": "My career has been built by connecting technology with technical practice. I believe digital tools should not replace engineering expertise. They should make technical work more efficient, traceable, accessible and reliable.",
+  "openTo": "NDT and inspection roles, QA/QC positions, and technical documentation work with inspection bodies, EPC and oil and gas companies.",
+  "stats": [
+    { "value": "II",  "label": "ASNT NDT level",            "accent": true },
+    { "value": "09",  "label": "Inspection methods supported" },
+    { "value": "06",  "label": "Oil and gas projects" },
+    { "value": "08",  "label": "Roles across IT, quality and NDT" }
+  ],
+  "contact": {
+    "email": "ramukmuthu7@gmail.com",
+    "linkedin": { "label": "linkedin.com/in/3zio", "url": "https://www.linkedin.com/in/3zio" },
+    "github": { "label": "github.com/eziokumar", "url": "https://github.com/eziokumar" },
+    "whatsapp": { "label": "Direct message", "url": "https://wa.me/qr/WGCDOQZYQWXZE1" }
+  },
+  "resume": {
+    "available": false,
+    "file": "",
+    "note": "Resume PDF not yet supplied."
+  },
+  "photo": {
+    "available": false,
+    "file": ""
+  },
+  "seo": {
+    "description": "Muthukumar — Technical Assistant and ASNT NDT Level II technician in Abu Dhabi. NDT inspection, QA/QC, technical documentation and document control, with a background in web development.",
+    "keywords": "NDT Level II, NDT Technician, Technical Assistant, QA/QC, Quality Assurance, Quality Control, Inspection, NDT Inspection, Technical Documentation, Document Control, Ultrasonic Testing, Magnetic Particle Testing, Liquid Penetrant Testing, Radiographic Testing, PAUT, Industrial Inspection, Abu Dhabi"
+  }
+}

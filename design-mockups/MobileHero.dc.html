@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap">
+  <style>
+    body { margin: 0; background: #0A0E12; }
+    a { color: #F0A63C; text-decoration: none; }
+    a:hover { color: #FFC46B; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: #0A0E12; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #E6ECF2; position: relative; overflow: hidden;">
+
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(79,179,184,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(79,179,184,0.05) 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <div style="position: absolute; inset: 0; background: radial-gradient(110% 55% at 60% 34%, rgba(240,166,60,0.13), transparent 64%);"></div>
+
+  <!-- nav -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 18px; border-bottom: 1px solid #1D2733;">
+    <div style="display: flex; align-items: center; gap: 9px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0A63C" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg>
+      <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em;">MUTHUKUMAR</span>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #2A3846;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3CEDA" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </div>
+  </div>
+
+  <!-- 3D scene -->
+  <div style="position: relative; padding: 8px 0 0 0;">
+    <svg viewBox="0 0 390 250" style="display: block; width: 100%;">
+      <defs>
+        <linearGradient id="msteel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#39485A"/><stop offset="34%" stop-color="#8397AC"/><stop offset="52%" stop-color="#5E7285"/><stop offset="100%" stop-color="#1B242E"/>
+        </linearGradient>
+        <radialGradient id="mglow"><stop offset="0%" stop-color="#F0A63C" stop-opacity="0.5"/><stop offset="60%" stop-color="#F0A63C" stop-opacity="0.1"/><stop offset="100%" stop-color="#F0A63C" stop-opacity="0"/></radialGradient>
+        <clipPath id="mclip"><path d="M40 92 L350 116 L350 152 L40 196 Z"/></clipPath>
+      </defs>
+
+      <g opacity="0.4">
+        <path d="M0 240 H390 M0 214 H390 M0 196 H390 M0 183 H390" stroke="#4FB3B8" stroke-width="1" opacity="0.2"/>
+      </g>
+
+      <ellipse cx="168" cy="140" rx="120" ry="104" fill="url(#mglow)"/>
+      <path d="M40 92 L350 116 L350 152 L40 196 Z" fill="url(#msteel)"/>
+
+      <g clip-path="url(#mclip)">
+        <ellipse cx="106" cy="136" rx="4" ry="62" fill="none" stroke="#141C25" stroke-width="5"/>
+        <ellipse cx="106" cy="136" rx="4" ry="62" fill="none" stroke="#2E3D4C" stroke-width="1.6"/>
+        <ellipse cx="262" cy="132" rx="2" ry="30" fill="none" stroke="#141C25" stroke-width="4"/>
+        <ellipse cx="168" cy="136" rx="40" ry="74" fill="#F0A63C" opacity="0.2"/>
+      </g>
+
+      <ellipse cx="40" cy="144" rx="30" ry="52" fill="#131C24" stroke="#5E7285" stroke-width="1.4"/>
+      <ellipse cx="40" cy="144" rx="21" ry="38" fill="#080C10" stroke="#33424F"/>
+
+      <ellipse cx="168" cy="136" rx="28" ry="58" fill="none" stroke="#F0A63C" stroke-width="2.2"/>
+      <ellipse cx="168" cy="136" rx="35" ry="72" fill="none" stroke="#F0A63C" stroke-width="1" opacity="0.35"/>
+
+      <g>
+        <path d="M168 62 V40 H236" stroke="#F0A63C" stroke-width="1" opacity="0.75"/>
+        <circle cx="168" cy="62" r="2.6" fill="#F0A63C"/>
+        <text x="242" y="37" fill="#F0A63C" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="1.2">UT PROBE</text>
+        <text x="242" y="51" fill="#5F7183" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing="1">SEAM 03 / 09</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- copy -->
+  <div style="position: relative; padding: 6px 18px 0 18px;">
+    <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;">
+      <span style="width: 22px; height: 1px; background: #F0A63C;"></span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.2em; color: #F0A63C;">TECHNICAL ASSISTANT · ABU DHABI</span>
+    </div>
+
+    <h1 style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 46px; line-height: 0.94; letter-spacing: -0.035em; margin: 0 0 16px 0; color: #F3F7FA;">MUTHU<br>KUMAR</h1>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #0A0E12; background: #F0A63C; padding: 5px 9px;">NDT LEVEL II</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #C3CEDA; border: 1px solid #2A3846; padding: 5px 9px;">QA / QC</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #C3CEDA; border: 1px solid #2A3846; padding: 5px 9px;">DOCUMENTATION</span>
+    </div>
+
+    <p style="font-size: 14px; line-height: 1.62; color: #97A6B6; margin: 0 0 20px 0; text-wrap: pretty;">Industrial inspection, NDT and technical documentation, carried by a software and web background.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 9px;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #F0A63C; color: #0A0E12; height: 50px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em;">
+        EXPLORE MY JOURNEY
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; height: 50px; border: 1px solid #2A3846; color: #C3CEDA; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em;">DOWNLOAD RESUME</div>
+    </div>
+  </div>
+
+  <!-- readout -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; border-top: 1px solid #1D2733; background: rgba(10,14,18,0.8);">
+    <div style="flex-grow: 1; display: flex; align-items: center; gap: 9px; padding: 14px 18px; border-right: 1px solid #1D2733;">
+      <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; color: #F0A63C; line-height: 1;">II</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; letter-spacing: 0.14em; color: #7C8C9D; line-height: 1.45;">ASNT<br>LEVEL</span>
+    </div>
+    <div style="flex-grow: 1; display: flex; align-items: center; gap: 9px; padding: 14px 14px; border-right: 1px solid #1D2733;">
+      <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; color: #E6ECF2; line-height: 1;">09</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; letter-spacing: 0.14em; color: #7C8C9D; line-height: 1.45;">METHODS<br>SUPPORTED</span>
+    </div>
+    <div style="flex-grow: 1; display: flex; align-items: center; gap: 9px; padding: 14px 14px;">
+      <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; color: #E6ECF2; line-height: 1;">06</span>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; letter-spacing: 0.14em; color: #7C8C9D; line-height: 1.45;">OIL &amp; GAS<br>PROJECTS</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
