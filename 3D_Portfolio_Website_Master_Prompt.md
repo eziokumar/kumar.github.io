@@ -349,9 +349,23 @@ I will provide separate information/audio explaining this project.
 
 IMPORTANT:
 
-Do NOT invent details about this project.
+Augmented Reality Application for the Faculty of Science
 
-Keep it as a placeholder until I provide the project explanation.
+The proposed project is an Augmented Reality (AR) application for the Faculty of Science that aims to provide an interactive and engaging way for students, lecturers, visitors, and technical staff to explore and understand student projects displayed in the faculty's laboratory rooms.
+
+The Faculty of Science contains many different types of student projects, including physical objects, engineering prototypes, construction models, mechanical systems, and other innovative projects. The proposed application will use augmented reality technology to provide additional digital information about each project when the user points a smartphone or tablet camera at it.
+
+Once a project is recognized, the application will display relevant information such as the project title, creators, department, description, objectives, components, technical specifications, and other related information. Users will also be able to access photographs, demonstration videos, animations, and other multimedia content explaining how the project works.
+
+One of the main features of the application will be interactive AR functionality. Users will be able to interact with specific parts of an AR object by touching or selecting areas on the screen. For example, selecting a particular component could highlight that part and display information about its purpose and function. The application could also provide an animated demonstration showing how the components are assembled or disassembled.
+
+The project can also be extended beyond displaying information about student projects. One of its main long-term objectives is to support engineering, construction, maintenance, and technical training. Workers or technicians could use the application to learn how to operate, assemble, disassemble, repair, or maintain equipment without requiring an instructor or experienced worker to be physically present at all times.
+
+For example, a worker could point the device at a machine and select a specific maintenance procedure. The application could then use AR to highlight the relevant components and provide step-by-step visual instructions. It could show which part needs to be removed, where a component should be installed, or how different parts should be connected. This would allow users to learn and perform technical procedures more easily and independently.
+
+The application would therefore serve two main purposes. First, it would transform the Faculty of Science laboratories into an interactive AR exhibition and learning environment, allowing users to explore student projects in a more engaging way. Second, it would provide a foundation for an AR-based technical training and assistance system that could eventually be applied to engineering, construction, industrial maintenance, and other technical fields.
+
+Overall, the main idea of this project is to combine Augmented Reality, 3D visualization, multimedia, and interactive instructions to make complex projects and technical procedures easier to understand. Instead of relying only on traditional manuals, written instructions, or demonstrations from an instructor, users can receive visual and interactive guidance directly through their mobile device, allowing them to learn anywhere and at any time.
 
 ---
 
